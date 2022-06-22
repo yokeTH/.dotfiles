@@ -20,7 +20,7 @@ echo "installing oh-my-zsh"
 if [ "$(command -v curl)" ]; then
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --unattended"
 elif [ "$(command -v wget)" ]; then
-  sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+  sh -bqc "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 else
   echo "To install oh-my-zsh, you must have curl or wget installed." >&2
   exit 1
@@ -37,6 +37,7 @@ fi
 echo "replacing dotfiles"
 cp -rf ./.zshrc ~/.zshrc
 cp -rf ./.p10k.zsh ~/.p10k.zsh
+cp -rf ./.aliases ~/.aliases
 
 source ~/.zshrc
 echo "Success"xw
