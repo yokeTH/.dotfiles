@@ -14,7 +14,7 @@ while true; do
 done
 
 echo "backuping .zsh"
-cp ~/.zshrc ./zshrc.backup
+cp -p ~/.zshrc ./zshrc.backup
 
 echo "installing oh-my-zsh"
 if [ "$(command -v curl)" ]; then
