@@ -5,7 +5,7 @@ set -e
 printf "\e[35m Make sure you installed zsh.\e[0m\n";
 
 while true; do
-    read -p "Do you wish to install this program? [Y/n]" yn
+    read -p "Do you wish to install this program? [Y/n] : " yn
     case $yn in
         [Yy]* ) break;;
         [Nn]* ) exit;;
@@ -13,8 +13,12 @@ while true; do
     esac
 done
 
-echo "backuping .zsh"
-cp -p ~/.zshrc ./zshrc.backup
+if test -f ~/.zshrc; then
+  echo ".zsh exits"
+  echo "backuping .zsh"~
+  cp -pf ~/.zshrc ./zshrc.backup
+fi
+
 
 echo "installing oh-my-zsh"
 if [ "$(command -v curl)" ]; then
@@ -39,5 +43,16 @@ cp -rf ./.zshrc ~/.zshrc
 cp -rf ./.p10k.zsh ~/.p10k.zsh
 cp -rf ./.aliases ~/.aliases
 
+while true; do
+    read -p "Do you wish to install Brew Bundle? [Y/n] : " yn
+    case $yn in
+        [Yy]* ) break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+brew bundle install --file brew/Brewfile
+
 source ~/.zshrc
-echo "Success"xw
+echo "Success"
