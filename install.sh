@@ -43,16 +43,12 @@ cp -rf ./.zshrc ~/.zshrc
 cp -rf ./.p10k.zsh ~/.p10k.zsh
 cp -rf ./.aliases ~/.aliases
 
-while true; do
-    read -p "Do you wish to install Brew Bundle? [Y/n] : " yn
-    case $yn in
-        [Yy]* ) break;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
-
-brew bundle install --file brew/Brewfile
+if [[ $(uname) == *Darwin* ]] then
+  echo "U are install on MacOS now install Brewfile"
+  brew bundle install --file brew/Brewfile
+else
+  :
+fi
 
 source ~/.zshrc
 echo "Success"
