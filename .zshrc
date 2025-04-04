@@ -83,7 +83,9 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+VSCODE=code
+
+plugins=(git zsh-syntax-highlighting tmux vscode brew)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -128,16 +130,36 @@ source ~/.aliases
 
 
 # bun completions
-# [ -s "/Users/yoketh/.bun/_bun" ] && source "/Users/yoketh/.bun/_bun"
+[ -s "/Users/yoketh/.bun/_bun" ] && source "/Users/yoketh/.bun/_bun"
 
 # bun
-# export BUN_INSTALL="$HOME/.bun"
-# export PATH="$BUN_INSTALL/bin:$PATH"
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
+export PATH="$PATH:$HOME/.local/bin"
+
+PATH=~/.console-ninja/.bin:$PATH
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Go bin
+export PATH=$PATH:$(go env GOPATH)/bin
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/yoketh/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yoketh/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/yoketh/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yoketh/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Ngrok completion
+if command -v ngrok &>/dev/null; then
+  eval "$(ngrok completion)"
+fi
 # pnpm
-#export PNPM_HOME="/Users/yoketh/Library/pnpm"
-#case ":$PATH:" in
-#  *":$PNPM_HOME:"*) ;;
-#  *) export PATH="$PNPM_HOME:$PATH" ;;
-#esac
+export PNPM_HOME="/Users/yoketh/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 # pnpm end
