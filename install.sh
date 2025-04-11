@@ -42,6 +42,8 @@ echo "replacing dotfiles"
 cp -rf ./.zshrc ~/.zshrc
 cp -rf ./.p10k.zsh ~/.p10k.zsh
 cp -rf ./.aliases ~/.aliases
+cp -rf ./zed/keymap.json ~/.config/zed/keymap.json
+cp -rf ./zed/settings.json ~/.config/zed/settings.json
 
 if [[ $(uname) == *Darwin* ]] then
   echo "U are install on MacOS now install Brewfile"
