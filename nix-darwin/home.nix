@@ -30,6 +30,10 @@
     syntaxHighlighting.enable = true;
     historySubstringSearch.enable = true;
     history.size = 10000;
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" ];
+    };
     initContent = ''
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
       [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh

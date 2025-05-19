@@ -8,12 +8,12 @@
     zsh
     zsh-powerlevel10k
     zsh-fzf-history-search
-    zsh-history-substring-search
     nixd
     htop
     bat
     ripgrep
     eza
+    devenv
 
     zulu
     ngrok
@@ -63,9 +63,23 @@
         spacer = { small = true; };
       }
       {
-        folder = "~/Pictures/Screenshots";
+        folder = "/Users/yoketh/Pictures/Screenshots";
+      }
+      {
+        folder = "/Users/yoketh/Repo";
+      }
+      {
+        spacer = { small = true; };
       }
     ];
+
+    finder.FXPreferredViewStyle = "Nlsv";
+    finder.ShowPathbar = false;
+    finder.ShowStatusBar = true;
+
+    screencapture.location = "~/Pictures/Screenshots";
+    screencapture.type = "png";
+    screencapture.show-thumbnail = false;
   };
 
   # to view custom `defaults read something`
@@ -77,13 +91,14 @@
     "com.apple.Safari" = {
       AutoOpenSafeDownloads = false;
     };
-    "com.apple.screencapture" = {
-      location = "~/Pictures/Screenshots";
-      type = "png";
-    };
   };
 
+
   nix.settings.experimental-features = "nix-command flakes";
+  nix.settings.trusted-users = [ "root" "yoketh" ];
+  nix.settings.extra-substituters = "https://devenv.cachix.org";
+  nix.settings.extra-trusted-public-keys = "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=";
+
   nixpkgs.hostPlatform = "aarch64-darwin";
   security.pam.services.sudo_local.touchIdAuth = true;
 }

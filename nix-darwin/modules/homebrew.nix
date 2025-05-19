@@ -18,6 +18,7 @@
       "keyboardcleantool"
       "macs-fan-control"
       "figma"
+      # "discord"
     ];
   };
 }

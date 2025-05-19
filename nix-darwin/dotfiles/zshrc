@@ -5,4 +5,3 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export GPG_TTY=$TTY
-export NIX_PATH=darwin=$HOME/.dotfiles/nix-darwin:$NIX_PATH
