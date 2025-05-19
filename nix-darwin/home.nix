@@ -19,6 +19,10 @@
       enableZshIntegration = true;
   };
 
+  programs.direnv.enable = true;
+  programs.direnv.enableZshIntegration = true;
+  programs.direnv.nix-direnv.enable = true;
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -40,6 +44,7 @@
       cat="bat -p --paging=never";
       grep="rg";
       ls="eza";
+      md="mkdir";
     };
     shellGlobalAliases = {
       UUID = "$(uuidgen | tr -d \\n)";

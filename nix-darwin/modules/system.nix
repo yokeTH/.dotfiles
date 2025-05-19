@@ -1,20 +1,39 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = [
-    pkgs.neovim
-    pkgs.raycast
-    pkgs.zed-editor
-    pkgs.fzf
-    pkgs.zsh
-    pkgs.zsh-powerlevel10k
-    pkgs.zsh-fzf-history-search
-    pkgs.zsh-history-substring-search
-    pkgs.nixd
-    pkgs.htop
-    pkgs.bat
-    pkgs.ripgrep
-    pkgs.eza
+  environment.systemPackages = with pkgs; [
+    # shell
+    neovim
+    fzf
+    zsh
+    zsh-powerlevel10k
+    zsh-fzf-history-search
+    zsh-history-substring-search
+    nixd
+    htop
+    bat
+    ripgrep
+    eza
+
+    zulu
+    ngrok
+
+    # app
+    discord
+    slack
+    raycast
+    zed-editor
+    appcleaner
+    rectangle
+    mongodb-compass
+    # obs-studio
+    vlc
+    drawio
+    tableplus
+    modrinth-app
+
+    # git
+    pre-commit
   ];
 
   system.stateVersion = 6;
@@ -45,11 +64,27 @@
         spacer = { small = true; };
       }
       {
-        folder = "/System/Applications/Utilities";
+        folder = "~/Pictures/Screenshots";
       }
     ];
   };
 
+  # to view custom `defaults read something`
+  # for an example `defaults read com.apple.finder`
+  system.defaults.CustomUserPreferences = {
+    NSGlobalDomain = {
+      WebKitDeveloperExtras = true;
+    };
+    "com.apple.Safari" = {
+      AutoOpenSafeDownloads = false;
+    };
+    "com.apple.screencapture" = {
+      location = "~/Pictures/Screenshots";
+      type = "png";
+    }
+  }
+
   nix.settings.experimental-features = "nix-command flakes";
   nixpkgs.hostPlatform = "aarch64-darwin";
+  security.pam.services.sudo_local.touchIdAuth = true;
 }
