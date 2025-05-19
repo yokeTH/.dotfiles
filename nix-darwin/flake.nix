@@ -28,7 +28,7 @@
       };
     in
     {
-      darwinConfigurations."Thanapons-Virtual-Machine" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations."Thanapons-MacBook-Pro" = nix-darwin.lib.darwinSystem {
         modules = [
           systemModule
           nix-homebrew.darwinModules.nix-homebrew

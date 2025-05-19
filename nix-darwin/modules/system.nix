@@ -27,7 +27,6 @@
     rectangle
     mongodb-compass
     # obs-studio
-    vlc
     drawio
     tableplus
     modrinth-app
@@ -81,8 +80,8 @@
     "com.apple.screencapture" = {
       location = "~/Pictures/Screenshots";
       type = "png";
-    }
-  }
+    };
+  };
 
   nix.settings.experimental-features = "nix-command flakes";
   nixpkgs.hostPlatform = "aarch64-darwin";

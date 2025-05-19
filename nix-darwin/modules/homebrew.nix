@@ -8,7 +8,7 @@
 
   homebrew = {
     enable = true;
-    onActivation.cleanup = "zap"
+    onActivation.cleanup = "zap";
     casks = [
       "ghostty"
       "fork"
