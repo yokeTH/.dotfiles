@@ -56,6 +56,14 @@
         TOML = {
           language_servers = ["!air.toml"];
         };
+        Nix = {
+          formatter = {
+            external = {
+              command = "alejandra";
+              arguments = ["--quiet" "--"];
+            };
+          };
+        };
       };
       lsp = {
         vtsls = {

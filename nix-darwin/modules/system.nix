@@ -1,38 +1,43 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     # shell
+    alejandra
+    nixd
+    nil
+    devenv
+
     neovim
     fzf
     zsh
     zsh-powerlevel10k
     zsh-fzf-history-search
-    nixd
     htop
     bat
     ripgrep
     eza
-    devenv
 
     zulu
     ngrok
 
+    uxplay
+
     # app
-    discord
-    slack
-    raycast
-    zed-editor
-    appcleaner
-    rectangle
-    mongodb-compass
+    # discord
+    # slack
+    # raycast
+    # zed-editor
+    # appcleaner
+    # rectangle
+    # mongodb-compass
     # obs-studio
-    drawio
-    tableplus
-    modrinth-app
+    # drawio
+    # tableplus
+    # modrinth-app
 
     # git
     pre-commit
+
+    # comma
   ];
 
   system.stateVersion = 6;
@@ -54,13 +59,13 @@
         app = "/System/Applications/Mail.app";
       }
       {
-        app = "${pkgs.zed-editor}/Applications/Zed.app";
+        app = "/Applications/Zed.app";
       }
       {
         app = "/Applications/Ghostty.app";
       }
       {
-        spacer = { small = true; };
+        spacer = {small = true;};
       }
       {
         folder = "/Users/yoketh/Pictures/Screenshots";
@@ -69,7 +74,7 @@
         folder = "/Users/yoketh/Repo";
       }
       {
-        spacer = { small = true; };
+        spacer = {small = true;};
       }
     ];
 
@@ -93,9 +98,8 @@
     };
   };
 
-
   nix.settings.experimental-features = "nix-command flakes";
-  nix.settings.trusted-users = [ "root" "yoketh" ];
+  nix.settings.trusted-users = ["root" "yoketh"];
   nix.settings.extra-substituters = "https://devenv.cachix.org";
   nix.settings.extra-trusted-public-keys = "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=";
 

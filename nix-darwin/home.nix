@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   imports = [
     ./pkgs/zed.nix
     ./pkgs/ghostty.nix
@@ -15,8 +14,8 @@
   };
 
   programs.fzf = {
-      enable = true;
-      enableZshIntegration = true;
+    enable = true;
+    enableZshIntegration = true;
   };
 
   programs.direnv.enable = true;
@@ -27,12 +26,14 @@
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
+    autosuggestion.highlight = "fg=cyan";
     syntaxHighlighting.enable = true;
     historySubstringSearch.enable = true;
     history.size = 10000;
+
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" ];
+      plugins = ["git"];
     };
     initContent = ''
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
@@ -41,14 +42,14 @@
     shellAliases = {
       ll = "ls -l";
       ".." = "cd ..";
-      c="clear";
-      g="git";
-      py3="python3";
-      top="htop";
-      cat="bat -p --paging=never";
-      grep="rg";
-      ls="eza";
-      md="mkdir";
+      c = "clear";
+      g = "git";
+      py3 = "python3";
+      top = "htop";
+      cat = "bat -p --paging=never";
+      grep = "rg";
+      ls = "eza";
+      md = "mkdir";
     };
     shellGlobalAliases = {
       UUID = "$(uuidgen | tr -d \\n)";
