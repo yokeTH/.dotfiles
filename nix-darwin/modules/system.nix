@@ -1,4 +1,6 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  gcloud = pkgs.google-cloud-sdk.withExtraComponents [pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin];
+in {
   environment.systemPackages = with pkgs; [
     # shell
     alejandra
@@ -34,11 +36,13 @@
     # tableplus
     # modrinth-app
 
-    # git
+    git
     pre-commit
-
-    # comma
+    graphviz
+    gcloud
   ];
+
+  system.primaryUser = "yoketh";
 
   system.stateVersion = 6;
 
@@ -100,8 +104,8 @@
 
   nix.settings.experimental-features = "nix-command flakes";
   nix.settings.trusted-users = ["root" "yoketh"];
-  nix.settings.extra-substituters = "https://devenv.cachix.org";
-  nix.settings.extra-trusted-public-keys = "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=";
+  # nix.settings.extra-substituters = "https://devenv.cachix.org";
+  # nix.settings.extra-trusted-public-keys = "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=";
 
   nixpkgs.hostPlatform = "aarch64-darwin";
   security.pam.services.sudo_local.touchIdAuth = true;

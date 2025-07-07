@@ -38,6 +38,10 @@
       "proxyman"
       "gifox"
       "google-chrome"
+      "imageoptim"
+      "obs"
+      "visual-studio-code"
+      "postman"
     ];
 
     masApps = {
@@ -45,7 +49,7 @@
       "Adguard for Safari" = 1440147259;
       "JSON Peep for Safari" = 1458969831;
       "Accelerate for Safari" = 1459809092;
-      # Line = 539883307;
+      Line = 539883307;
     };
   };
 }

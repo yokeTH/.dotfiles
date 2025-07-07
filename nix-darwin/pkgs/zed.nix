@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   programs.zed-editor = {
     enable = true;
     extensions = [
@@ -28,9 +27,17 @@
       "sql"
       "vue"
       "nix"
+      "biome"
     ];
-    extraPackages = [ pkgs.nixd ];
+    extraPackages = [pkgs.nixd];
     userSettings = {
+      assistant = {
+        version = "2";
+        default_model = {
+          provider = "copilot_chat";
+          model = "gpt-4.1";
+        };
+      };
       tabs = {
         close_position = "left";
         file_icons = true;
@@ -44,7 +51,6 @@
       theme = "Catppuccin Frappé";
       icon_theme = "Catppuccin Frappé";
       edit_predictions.disabled_globs = ["*"];
-      features.edit_prediction_provider = "zed";
       ui_font_size = 16;
       buffer_font_size = 14;
       terminal = {
@@ -79,7 +85,7 @@
     };
     userKeymaps = [
       {
-        context =  "Workspace";
+        context = "Workspace";
         bindings = {
           "shift shift" = "file_finder::Toggle";
         };
@@ -87,8 +93,8 @@
       {
         context = "Editor";
         bindings = {
-          "cmd-alt-shift-up"= "editor::AddSelectionAbove";
-          "cmd-alt-shift-down"= "editor::AddSelectionBelow";
+          "cmd-alt-shift-up" = "editor::AddSelectionAbove";
+          "cmd-alt-shift-down" = "editor::AddSelectionBelow";
         };
       }
     ];

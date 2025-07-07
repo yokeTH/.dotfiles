@@ -11,8 +11,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-index-database.url = "github:nix-community/nix-index-database";
-    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+    # nix-index-database.url = "github:nix-community/nix-index-database";
+    # nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs = inputs @ {
     self,
@@ -20,7 +20,7 @@
     nixpkgs,
     nix-homebrew,
     home-manager,
-    nix-index-database,
+    # nix-index-database,
     ...
   }: let
     # We'll use this platform for darwin on Apple Silicon
@@ -60,8 +60,10 @@
             home = "/Users/yoketh";
           };
         }
-        nix-index-database.darwinModules.nix-index
-        {programs.nix-index-database.comma.enable = true;}
+        # nix-index-database.darwinModules.nix-index
+        # {
+        #   programs.nix-index-database.comma.enable = true;
+        # }
       ];
     };
   };
