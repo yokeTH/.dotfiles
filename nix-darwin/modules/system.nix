@@ -17,6 +17,7 @@ in {
     bat
     ripgrep
     eza
+    gnupg
 
     zulu
     ngrok

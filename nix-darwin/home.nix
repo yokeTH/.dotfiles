@@ -13,8 +13,7 @@
     userEmail = "66236295+yokeTH@users.noreply.github.com";
     extraConfig = {
       commit.gpgsign = true;
-      gpg.format = "ssh";
-      user.signingkey = "~/.ssh/id_ed25519.pub";
+      user.signingkey = "77FC300623098D07";
     };
   };
 
