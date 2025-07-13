@@ -27,7 +27,6 @@
       "sql"
       "vue"
       "nix"
-      "biome"
     ];
     extraPackages = [pkgs.nixd];
     userSettings = {
@@ -84,12 +83,12 @@
       };
     };
     userKeymaps = [
-      {
-        context = "Workspace";
-        bindings = {
-          "shift shift" = "file_finder::Toggle";
-        };
-      }
+      # {
+      #   context = "Workspace";
+      #   bindings = {
+      #     "shift shift" = "file_finder::Toggle";
+      #   };
+      # }
       {
         context = "Editor";
         bindings = {

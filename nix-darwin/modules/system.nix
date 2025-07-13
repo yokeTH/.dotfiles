@@ -86,6 +86,8 @@ in {
     finder.ShowPathbar = false;
     finder.ShowStatusBar = true;
 
+    screencapture.disable-shadow = true;
+    screencapture.include-date = true;
     screencapture.location = "~/Pictures/Screenshots";
     screencapture.type = "png";
     screencapture.show-thumbnail = false;
