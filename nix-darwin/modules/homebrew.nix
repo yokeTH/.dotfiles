@@ -8,10 +8,18 @@
   homebrew = {
     enable = true;
     onActivation = {
-      cleanup = "zap";
+      cleanup = "uninstall";
       upgrade = true;
       autoUpdate = true;
     };
+
+    taps = [
+      "hashicorp/tap"
+    ];
+
+    brews = [
+      "hashicorp/tap/terraform"
+    ];
 
     casks = [
       "ghostty"
@@ -42,14 +50,15 @@
       "obs"
       "visual-studio-code"
       "postman"
+      "openvpn-connect"
+      "ungoogled-chromium"
+      "brave-browser"
+      "burp-suite"
+      "vlc"
     ];
 
     masApps = {
-      RYTD = 6463305263;
-      "Adguard for Safari" = 1440147259;
-      "JSON Peep for Safari" = 1458969831;
-      "Accelerate for Safari" = 1459809092;
-      Line = 539883307;
+      "The Unarchiver" = 425424353;
     };
   };
 }

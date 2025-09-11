@@ -69,6 +69,13 @@
             };
           };
         };
+        SQL = {
+          formatter = {
+            external = {
+              command = "sql-formatter";
+            };
+          };
+        };
       };
       lsp = {
         vtsls = {

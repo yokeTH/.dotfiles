@@ -38,9 +38,11 @@ in {
     # modrinth-app
 
     git
+    gh
     pre-commit
     graphviz
     gcloud
+    tree
   ];
 
   system.primaryUser = "yoketh";
@@ -58,7 +60,7 @@ in {
     dock.show-recents = false;
     dock.persistent-apps = [
       {
-        app = "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app";
+        app = "/Applications/Brave Browser.app";
       }
       {
         app = "/System/Applications/Mail.app";
