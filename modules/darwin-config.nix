@@ -3,6 +3,7 @@
   discord = pkgs.callPackage ../lib/discord.nix {};
   # git-fork = pkgs.callPackage ../lib/git-fork.nix {};
   keyboardcleantool = pkgs.callPackage ../lib/keyboardcleantool.nix {};
+  macs-fan-control = pkgs.callPackage ../lib/macs-fan-control.nix {};
 in {
   environment.systemPackages = with pkgs;
     [
@@ -53,10 +54,12 @@ in {
       ghostty-bin
       brave
       notion-app
+      jetbrains.idea-community-bin
     ]
     ++ [
       discord
       keyboardcleantool
+      macs-fan-control
     ];
 
   system.primaryUser = "yoketh";

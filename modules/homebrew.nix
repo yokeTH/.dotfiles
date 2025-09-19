@@ -23,7 +23,6 @@
 
     casks = [
       "playcover-community"
-      "macs-fan-control"
       "figma"
       "microsoft-teams"
       "zoom"
