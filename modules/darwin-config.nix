@@ -1,6 +1,7 @@
 {pkgs, ...}: let
   gcloud = pkgs.google-cloud-sdk.withExtraComponents [pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin];
   discord = pkgs.callPackage ../lib/discord.nix {};
+  # git-fork = pkgs.callPackage ../lib/git-fork.nix {};
 in {
   environment.systemPackages = with pkgs;
     [
@@ -51,7 +52,10 @@ in {
       ghostty-bin
       brave
     ]
-    ++ [discord];
+    ++ [
+      discord
+      git-fork
+    ];
 
   system.primaryUser = "yoketh";
 

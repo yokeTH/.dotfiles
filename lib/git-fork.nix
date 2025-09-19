@@ -1,8 +1,8 @@
 {
-  lib,
   stdenvNoCC,
-  _7zz,
   fetchurl,
+  undmg,
+  nix-update-script,
   makeBinaryWrapper,
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
@@ -18,20 +18,17 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
   sourceRoot = ".";
 
-  unpackPhase = lib.optionalString stdenvNoCC.hostPlatform.isDarwin ''
-    runHook preUnpack
-    7zz -snld x $src
-    runHook postUnpack
-  '';
+  nativeBuildInputs = [undmg makeBinaryWrapper];
 
-  nativeBuildInputs = [
-    _7zz
-    makeBinaryWrapper
-  ];
+  installPhase = ''
+    runHook preInstall
 
-  postInstall = ''
-    mkdir -p $out/Applications
-    mv Fork/Fork.app $out/Applications/
+    mkdir -p "$out/Applications"
+    mv Fork.app "$out/Applications"
     makeWrapper $out/Applications/Fork.app/Contents/Resources/fork_cli $out/bin/fork
+
+    runHook postInstall
   '';
+
+  passthru.updateScript = nix-update-script {};
 })
