@@ -52,6 +52,7 @@ in {
 
       ghostty-bin
       brave
+      notion-app
     ]
     ++ [
       discord

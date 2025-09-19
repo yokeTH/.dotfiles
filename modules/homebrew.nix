@@ -22,8 +22,6 @@
     ];
 
     casks = [
-      "notion"
-      "intellij-idea-ce"
       "playcover-community"
       "macs-fan-control"
       "figma"
