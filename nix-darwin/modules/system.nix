@@ -43,6 +43,8 @@ in {
     graphviz
     gcloud
     tree
+
+    ffmpeg
   ];
 
   system.primaryUser = "yoketh";
