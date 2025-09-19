@@ -1,8 +1,8 @@
 {
-  lib,
   stdenvNoCC,
-  _7zz,
   fetchurl,
+  undmg,
+  nix-update-script,
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
   name = "discord";
@@ -17,18 +17,16 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
   sourceRoot = ".";
 
-  unpackPhase = lib.optionalString stdenvNoCC.hostPlatform.isDarwin ''
-    runHook preUnpack
-    7zz -snld x $src
-    runHook postUnpack
+  nativeBuildInputs = [undmg];
+
+  installPhase = ''
+    runHook preInstall
+
+    mkdir -p "$out/Applications"
+    mv Discord.app "$out/Applications"
+
+    runHook postInstall
   '';
 
-  nativeBuildInputs = [
-    _7zz
-  ];
-
-  postInstall = ''
-    mkdir -p $out/Applications
-    mv Discord/Discord.app $out/Applications/
-  '';
+  passthru.updateScript = nix-update-script {};
 })
