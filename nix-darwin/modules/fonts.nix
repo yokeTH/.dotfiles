@@ -68,5 +68,7 @@
     # nerd-fonts.ubuntu-sans
     # nerd-fonts.victor-mono
     nerd-fonts.zed-mono
+
+    (callPackage ./../../lib/fonts/itim.nix {})
   ];
 }
