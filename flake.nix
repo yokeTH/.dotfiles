@@ -35,5 +35,10 @@
     };
   in {
     darwinConfigurations."Thanapons-MacBook-Pro" = mkDarwin;
+
+    homeConfigurations."yoketh" = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      modules = [./modules/home.nix];
+    };
   };
 }

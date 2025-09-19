@@ -1,8 +1,15 @@
-{pkgs, ...}: {
-  imports = [
+{
+  pkgs,
+  lib,
+  ...
+}: {
+  imports = lib.optionals pkgs.hostPlatform.isDarwin [
     ./zed.nix
     ./ghostty.nix
   ];
+
+  home.username = lib.mkIf pkgs.hostPlatform.isLinux "yoketh";
+  home.homeDirectory = lib.mkIf pkgs.hostPlatform.isLinux "/home/yoketh";
 
   programs.home-manager.enable = true;
   home.stateVersion = "25.11";
