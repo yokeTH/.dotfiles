@@ -1,8 +1,8 @@
 {pkgs, ...}: {
-  # imports = [
-  #   ./pkgs/zed.nix
-  #   ./pkgs/ghostty.nix
-  # ];
+  imports = [
+    ./zed.nix
+    ./ghostty.nix
+  ];
 
   programs.home-manager.enable = true;
   home.stateVersion = "25.11";
