@@ -2,6 +2,7 @@
   gcloud = pkgs.google-cloud-sdk.withExtraComponents [pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin];
   discord = pkgs.callPackage ../lib/discord.nix {};
   # git-fork = pkgs.callPackage ../lib/git-fork.nix {};
+  keyboardcleantool = pkgs.callPackage ../lib/keyboardcleantool.nix {};
 in {
   environment.systemPackages = with pkgs;
     [
@@ -54,7 +55,7 @@ in {
     ]
     ++ [
       discord
-      git-fork
+      keyboardcleantool
     ];
 
   system.primaryUser = "yoketh";

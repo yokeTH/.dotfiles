@@ -25,7 +25,6 @@
       "notion"
       "intellij-idea-ce"
       "playcover-community"
-      "keyboardcleantool"
       "macs-fan-control"
       "figma"
       "microsoft-teams"
