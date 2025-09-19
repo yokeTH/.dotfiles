@@ -30,9 +30,8 @@
       config.allowUnsupportedSystem = true;
     };
 
-    mkDarwin = import ./nix-darwin/mod.nix {
+    mkDarwin = import ./aarch64-darwin.nix {
       inherit nix-darwin nix-homebrew home-manager pkgs;
-      inherit system;
     };
   in {
     darwinConfigurations."Thanapons-MacBook-Pro" = mkDarwin;

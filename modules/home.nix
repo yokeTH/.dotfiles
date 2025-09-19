@@ -1,8 +1,8 @@
 {pkgs, ...}: {
-  imports = [
-    ./pkgs/zed.nix
-    ./pkgs/ghostty.nix
-  ];
+  # imports = [
+  #   ./pkgs/zed.nix
+  #   ./pkgs/ghostty.nix
+  # ];
 
   programs.home-manager.enable = true;
   home.stateVersion = "25.11";
@@ -61,7 +61,7 @@
     };
   };
 
-  home.file.".p10k.zsh".source = ./dotfiles/p10k.zsh;
+  home.file.".p10k.zsh".source = ../dotfiles/p10k.zsh;
 
   home.sessionVariables = {
     EDITOR = "zed";
