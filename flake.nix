@@ -15,7 +15,7 @@
     };
   };
 
-  outputs = inputs @ {
+  outputs = {
     self,
     nixpkgs,
     nix-darwin,
@@ -23,22 +23,31 @@
     home-manager,
     ...
   }: let
-    system = "aarch64-darwin";
-    pkgs = import nixpkgs {
-      inherit system;
+    darwinSystem = "aarch64-darwin";
+    linuxSystem = "aarch64-linux";
+
+    darwinPkgs = import nixpkgs {
+      system = darwinSystem;
+      config.allowUnfree = true;
+      config.allowUnsupportedSystem = true;
+    };
+
+    linuxPkgs = import nixpkgs {
+      system = linuxSystem;
       config.allowUnfree = true;
       config.allowUnsupportedSystem = true;
     };
 
     mkDarwin = import ./aarch64-darwin.nix {
-      inherit nix-darwin nix-homebrew home-manager pkgs;
+      inherit nix-darwin nix-homebrew home-manager darwinPkgs;
+      pkgs = darwinPkgs;
     };
   in {
     darwinConfigurations."Thanapons-MacBook-Pro" = mkDarwin;
 
     homeConfigurations."yoketh" = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      modules = [./modules/home.nix];
+      pkgs = linuxPkgs;
+      modules = [./modules/home-linux.nix];
     };
   };
 }
