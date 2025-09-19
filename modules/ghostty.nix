@@ -1,3 +1,5 @@
 {...}: {
-  home.file."/Library/Application\ Support/com.mitchellh.ghostty/config".source = ../dotfiles/ghostty.config;
+  xdg.configFile."ghostty/config".text = ''
+    ${builtins.readFile ../dotfiles/ghostty.config}
+  '';
 }

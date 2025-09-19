@@ -22,8 +22,6 @@
     ];
 
     casks = [
-      "ghostty"
-      "fork"
       "notion"
       "intellij-idea-ce"
       "playcover-community"
@@ -32,10 +30,8 @@
       "figma"
       "microsoft-teams"
       "zoom"
-      "discord"
       "slack"
       "raycast"
-      "zed"
       "appcleaner"
       "rectangle"
       "mongodb-compass"
@@ -52,7 +48,6 @@
       "postman"
       "openvpn-connect"
       "ungoogled-chromium"
-      "brave-browser"
       "burp-suite"
       "vlc"
     ];

@@ -1,51 +1,57 @@
 {pkgs, ...}: let
   gcloud = pkgs.google-cloud-sdk.withExtraComponents [pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin];
+  discord = pkgs.callPackage ../lib/discord.nix {};
 in {
-  environment.systemPackages = with pkgs; [
-    # shell
-    alejandra
-    nixd
-    nil
-    devenv
+  environment.systemPackages = with pkgs;
+    [
+      # shell
+      alejandra
+      nixd
+      nil
+      devenv
 
-    neovim
-    fzf
-    zsh
-    zsh-powerlevel10k
-    zsh-fzf-history-search
-    htop
-    bat
-    ripgrep
-    eza
-    gnupg
+      neovim
+      fzf
+      zsh
+      zsh-powerlevel10k
+      zsh-fzf-history-search
+      htop
+      bat
+      ripgrep
+      eza
+      gnupg
 
-    zulu
-    ngrok
+      zulu
+      ngrok
 
-    uxplay
+      uxplay
 
-    # app
-    # discord
-    # slack
-    # raycast
-    # zed-editor
-    # appcleaner
-    # rectangle
-    # mongodb-compass
-    # obs-studio
-    # drawio
-    # tableplus
-    # modrinth-app
+      # app
+      # discord
+      # slack
+      # raycast
+      # zed-editor
+      # appcleaner
+      # rectangle
+      # mongodb-compass
+      # obs-studio
+      # drawio
+      # tableplus
+      # modrinth-app
 
-    git
-    gh
-    pre-commit
-    graphviz
-    gcloud
-    tree
+      git
+      gh
+      pre-commit
+      graphviz
+      gcloud
+      tree
 
-    ffmpeg
-  ];
+      ffmpeg
+
+      ghostty-bin
+      brave
+    ]
+    ++ [discord];
 
   system.primaryUser = "yoketh";
 
@@ -62,25 +68,19 @@ in {
     dock.show-recents = false;
     dock.persistent-apps = [
       {
-        app = "/Applications/Brave Browser.app";
+        app = "${pkgs.brave}/Applications/Brave Browser.app";
       }
       {
         app = "/System/Applications/Mail.app";
       }
       {
-        app = "/Applications/Zed.app";
+        app = "${pkgs.zed-editor}/Applications/Zed.app";
       }
       {
-        app = "/Applications/Ghostty.app";
+        app = "${pkgs.ghostty-bin}/Applications/Ghostty.app";
       }
       {
-        spacer = {small = true;};
-      }
-      {
-        folder = "/Users/yoketh/Pictures/Screenshots";
-      }
-      {
-        folder = "/Users/yoketh/Repo";
+        app = "${discord}/Applications/Discord.app";
       }
       {
         spacer = {small = true;};
