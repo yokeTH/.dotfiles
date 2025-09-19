@@ -4,6 +4,7 @@
   # git-fork = pkgs.callPackage ../lib/git-fork.nix {};
   keyboardcleantool = pkgs.callPackage ../lib/keyboardcleantool.nix {};
   macs-fan-control = pkgs.callPackage ../lib/macs-fan-control.nix {};
+  figma = pkgs.callPackage ../lib/figma.nix {};
 in {
   environment.systemPackages = with pkgs;
     [
@@ -60,6 +61,7 @@ in {
       discord
       keyboardcleantool
       macs-fan-control
+      figma
     ];
 
   system.primaryUser = "yoketh";

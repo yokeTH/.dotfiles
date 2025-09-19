@@ -23,7 +23,7 @@
 
     casks = [
       "playcover-community"
-      "figma"
+      # "figma"
       "microsoft-teams"
       "zoom"
       "slack"
