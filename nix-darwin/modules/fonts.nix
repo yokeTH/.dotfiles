@@ -70,5 +70,6 @@
     nerd-fonts.zed-mono
 
     (callPackage ./../../lib/fonts/itim.nix {})
+    (callPackage ./../../lib/fonts/sarabun.nix {})
   ];
 }
