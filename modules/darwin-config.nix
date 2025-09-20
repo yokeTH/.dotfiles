@@ -1,17 +1,17 @@
 {pkgs, ...}: let
-  discord = pkgs.callPackage ../lib/discord.nix {};
-  # git-fork = pkgs.callPackage ../lib/git-fork.nix {};
-  keyboardcleantool = pkgs.callPackage ../lib/keyboardcleantool.nix {};
-  macs-fan-control = pkgs.callPackage ../lib/macs-fan-control.nix {};
-  figma = pkgs.callPackage ../lib/figma.nix {};
-  proxyman = pkgs.callPackage ../lib/proxyman.nix {};
-  clop = pkgs.callPackage ../lib/clop.nix {};
-  imageoptim = pkgs.callPackage ../lib/imageoptim.nix {};
-  obs = pkgs.callPackage ../lib/obs.nix {};
-  ungoogled-chromium = pkgs.callPackage ../lib/ungoogled-chromium.nix {};
-  gifox = pkgs.callPackage ../lib/gifox.nix {};
-  burpsuite = pkgs.callPackage ../lib/burpsuite.nix {};
-  vlc = pkgs.callPackage ../lib/vlc.nix {};
+  discord = pkgs.callPackage ../pkgs/discord.nix {};
+  # git-fork = pkgs.callPackage ../pkgs/git-fork.nix {};
+  keyboardcleantool = pkgs.callPackage ../pkgs/keyboardcleantool.nix {};
+  macs-fan-control = pkgs.callPackage ../pkgs/macs-fan-control.nix {};
+  figma = pkgs.callPackage ../pkgs/figma.nix {};
+  proxyman = pkgs.callPackage ../pkgs/proxyman.nix {};
+  clop = pkgs.callPackage ../pkgs/clop.nix {};
+  imageoptim = pkgs.callPackage ../pkgs/imageoptim.nix {};
+  obs = pkgs.callPackage ../pkgs/obs.nix {};
+  ungoogled-chromium = pkgs.callPackage ../pkgs/ungoogled-chromium.nix {};
+  gifox = pkgs.callPackage ../pkgs/gifox.nix {};
+  burpsuite = pkgs.callPackage ../pkgs/burpsuite.nix {};
+  vlc = pkgs.callPackage ../pkgs/vlc.nix {};
 in {
   environment.systemPackages = with pkgs;
     [
