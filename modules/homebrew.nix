@@ -13,29 +13,9 @@
       autoUpdate = true;
     };
 
-    taps = [
-      "hashicorp/tap"
-    ];
-
-    brews = [
-      "hashicorp/tap/terraform"
-    ];
-
     casks = [
       "playcover-community"
-      # "figma"
-      "microsoft-teams"
-      "zoom"
-      "slack"
-      "raycast"
-      "appcleaner"
-      "rectangle"
-      "mongodb-compass"
-      "drawio"
-      "tableplus"
-      "modrinth"
       "orbstack"
-      "proxyman"
       "gifox"
       "google-chrome"
       "imageoptim"

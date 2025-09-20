@@ -1,10 +1,11 @@
 {pkgs, ...}: let
   gcloud = pkgs.google-cloud-sdk.withExtraComponents [pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin];
   discord = pkgs.callPackage ../lib/discord.nix {};
-  # git-fork = pkgs.callPackage ../lib/git-fork.nix {};
+  git-fork = pkgs.callPackage ../lib/git-fork.nix {};
   keyboardcleantool = pkgs.callPackage ../lib/keyboardcleantool.nix {};
   macs-fan-control = pkgs.callPackage ../lib/macs-fan-control.nix {};
   figma = pkgs.callPackage ../lib/figma.nix {};
+  proxyman = pkgs.callPackage ../lib/proxyman.nix {};
 in {
   environment.systemPackages = with pkgs;
     [
@@ -30,19 +31,6 @@ in {
 
       uxplay
 
-      # app
-      # discord
-      # slack
-      # raycast
-      # zed-editor
-      # appcleaner
-      # rectangle
-      # mongodb-compass
-      # obs-studio
-      # drawio
-      # tableplus
-      # modrinth-app
-
       git
       gh
       pre-commit
@@ -56,12 +44,24 @@ in {
       brave
       notion-app
       jetbrains.idea-community-bin
+      slack
+      zoom-us
+      raycast
+      appcleaner
+      rectangle
+      teams
+      mongodb-compass
+      tableplus
+      modrinth-app
+      # proxyman
     ]
     ++ [
       discord
       keyboardcleantool
       macs-fan-control
       figma
+      git-fork
+      proxyman
     ];
 
   system.primaryUser = "yoketh";
