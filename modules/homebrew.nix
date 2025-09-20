@@ -18,7 +18,6 @@
       "orbstack"
       "gifox"
 
-      "imageoptim"
       "obs"
       "visual-studio-code"
       "postman"

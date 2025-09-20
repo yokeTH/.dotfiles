@@ -7,6 +7,7 @@
   figma = pkgs.callPackage ../lib/figma.nix {};
   proxyman = pkgs.callPackage ../lib/proxyman.nix {};
   clop = pkgs.callPackage ../lib/clop.nix {};
+  imageoptim = pkgs.callPackage ../lib/imageoptim.nix {};
 in {
   environment.systemPackages = with pkgs;
     [
@@ -65,6 +66,7 @@ in {
       # git-fork
       proxyman
       clop
+      imageoptim
     ];
 
   system.primaryUser = "yoketh";
