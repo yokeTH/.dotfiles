@@ -108,7 +108,10 @@ in {
   home.file.".p10k.zsh".source = ../dotfiles/p10k.zsh;
 
   home.sessionVariables = {
-    EDITOR = "zed";
+    EDITOR =
+      if isDarwin
+      then "zed"
+      else "vim";
     TERM = "xterm-256color";
   };
 }
