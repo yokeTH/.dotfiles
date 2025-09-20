@@ -41,12 +41,14 @@
       inherit nix-darwin nix-homebrew home-manager darwinPkgs;
       pkgs = darwinPkgs;
     };
+
+    mkLinuxArm = import ./aarch64-linux.nix {
+      inherit home-manager;
+      pkgs = linuxPkgs;
+    };
   in {
     darwinConfigurations."Thanapons-MacBook-Pro" = mkDarwin;
 
-    homeConfigurations."yoketh" = home-manager.lib.homeManagerConfiguration {
-      pkgs = linuxPkgs;
-      modules = [./modules/home-linux.nix];
-    };
+    homeConfigurations."yoketh" = mkLinuxArm;
   };
 }

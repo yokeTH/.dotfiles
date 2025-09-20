@@ -9,6 +9,7 @@
   fontModule = import ./modules/font.nix {inherit pkgs;};
   systemModule = import ./modules/darwin-config.nix {inherit pkgs;};
   lib = pkgs.lib;
+  stdenv = pkgs.stdenv;
 in
   nix-darwin.lib.darwinSystem {
     inherit system;
@@ -30,7 +31,10 @@ in
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         home-manager.backupFileExtension = "backup";
-        home-manager.users.yoketh = import ./modules/home.nix {inherit pkgs lib;};
+        home-manager.users.yoketh = import ./modules/home.nix {
+          inherit pkgs lib;
+          isDarwin = true;
+        };
 
         users.users.yoketh = {
           name = "yoketh";

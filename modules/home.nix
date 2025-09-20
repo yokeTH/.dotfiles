@@ -1,13 +1,20 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  lib,
+  isDarwin,
+  ...
+}: let
   gcloud = pkgs.google-cloud-sdk.withExtraComponents [pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin];
 in {
-  imports = [
+  imports = lib.optionals isDarwin [
     ./zed.nix
     ./ghostty.nix
   ];
 
   programs.home-manager.enable = true;
-  home.stateVersion = "25.11";
+  home.stateVersion = "25.05";
+  home.username = lib.mkIf (!isDarwin) "yoketh";
+  home.homeDirectory = lib.mkIf (!isDarwin) "/home/yoketh";
 
   home.packages = with pkgs; [
     alejandra
