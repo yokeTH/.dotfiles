@@ -47,9 +47,12 @@
     userName = "Thanapon Johdee";
     userEmail = "66236295+yokeTH@users.noreply.github.com";
     extraConfig = {
-      # commit.gpgsign = true;
-      # user.signingkey = "77FC300623098D07";
+      commit.gpgsign = true;
+      user.signingkey = "77FC300623098D07";
       init.defaultBranch = "main";
+      github.user = "yokeTH";
+      branch.autosetuprebase = "always";
+      color.ui = true;
     };
   };
 

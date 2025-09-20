@@ -1,4 +1,6 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  gcloud = pkgs.google-cloud-sdk.withExtraComponents [pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin];
+in {
   imports = [
     ./zed.nix
     ./ghostty.nix
@@ -6,6 +8,40 @@
 
   programs.home-manager.enable = true;
   home.stateVersion = "25.11";
+
+  home.packages = with pkgs; [
+    alejandra
+    nixd
+    nil
+    devenv
+
+    neovim
+    fzf
+    zsh
+    zsh-powerlevel10k
+    zsh-fzf-history-search
+    htop
+    bat
+    ripgrep
+    eza
+    gnupg
+
+    fastfetch
+
+    zulu
+    ngrok
+
+    uxplay
+
+    git
+    gh
+    pre-commit
+    graphviz
+    gcloud
+    tree
+
+    ffmpeg
+  ];
 
   programs.git = {
     enable = true;
