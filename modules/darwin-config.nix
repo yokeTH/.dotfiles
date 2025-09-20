@@ -1,7 +1,7 @@
 {pkgs, ...}: let
   gcloud = pkgs.google-cloud-sdk.withExtraComponents [pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin];
   discord = pkgs.callPackage ../lib/discord.nix {};
-  git-fork = pkgs.callPackage ../lib/git-fork.nix {};
+  # git-fork = pkgs.callPackage ../lib/git-fork.nix {};
   keyboardcleantool = pkgs.callPackage ../lib/keyboardcleantool.nix {};
   macs-fan-control = pkgs.callPackage ../lib/macs-fan-control.nix {};
   figma = pkgs.callPackage ../lib/figma.nix {};
@@ -54,13 +54,14 @@ in {
       tableplus
       modrinth-app
       # proxyman
+      google-chrome
     ]
     ++ [
       discord
       keyboardcleantool
       macs-fan-control
       figma
-      git-fork
+      # git-fork
       proxyman
     ];
 

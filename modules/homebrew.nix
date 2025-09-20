@@ -17,7 +17,7 @@
       "playcover-community"
       "orbstack"
       "gifox"
-      "google-chrome"
+
       "imageoptim"
       "obs"
       "visual-studio-code"
