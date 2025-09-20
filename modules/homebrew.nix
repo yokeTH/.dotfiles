@@ -16,9 +16,7 @@
     casks = [
       "playcover-community"
       "orbstack"
-      "gifox"
 
-      "burp-suite"
       "vlc"
     ];
 

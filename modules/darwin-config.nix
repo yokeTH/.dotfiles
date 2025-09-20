@@ -10,6 +10,8 @@
   imageoptim = pkgs.callPackage ../lib/imageoptim.nix {};
   obs = pkgs.callPackage ../lib/obs.nix {};
   ungoogled-chromium = pkgs.callPackage ../lib/ungoogled-chromium.nix {};
+  gifox = pkgs.callPackage ../lib/gifox.nix {};
+  burpsuite = pkgs.callPackage ../lib/burpsuite.nix {};
 in {
   environment.systemPackages = with pkgs;
     [
@@ -74,6 +76,8 @@ in {
       imageoptim
       obs
       ungoogled-chromium
+      gifox
+      burpsuite
     ];
 
   system.primaryUser = "yoketh";
