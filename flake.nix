@@ -16,7 +16,6 @@
   };
 
   outputs = {
-    self,
     nixpkgs,
     nix-darwin,
     nix-homebrew,

@@ -1,7 +1,6 @@
 {
   stdenvNoCC,
   fetchzip,
-  undmg,
   nix-update-script,
 }:
 stdenvNoCC.mkDerivation {
