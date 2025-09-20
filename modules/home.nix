@@ -109,5 +109,6 @@ in {
 
   home.sessionVariables = {
     EDITOR = "zed";
+    TERM = "xterm-256color";
   };
 }
