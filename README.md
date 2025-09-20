@@ -1,16 +1,35 @@
 # .dotfiles
 
-```shell
-sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake ~/.dotfiles/nix-darwin
-
-# if you alreadt install nix-darwin
-darwin-rebuild switch --flake ~/.dotfiles/nix-darwin
+1. Install `nix`
+```sh
+$ sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
 ```
 
-### change default shell to zsh
+2. install nix-darwin or home-manager (standalone)
+nix-darwin
+```sh
+sudo nix run nix-darwin/master#darwin-rebuild -- switch
 ```
-home-manager switch --flake ~/.dotfiles/home-manager
+or home-manager
+```sh
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --update
+nix-shell '<home-manager>' -A install
+```
 
-grep zsh /etc/shells || command -v zsh | sudo tee -a /etc/shells
-chsh -s "$(command -v zsh)"
+3. Apply dotfiles
+```sh
+sudo darwin-rebuild switch --flake github:yoketh/.dotfiles
 ```
+```sh
+home-manager switch --flake github:yoketh/.dotfiles
+```
+
+## Local
+```sh
+git clone https://github.com/yokeTH/.dotfiles ~/.dotfiles
+```
+
+# Thanks to
+- [mitchellh/nixos-config](https://github.com/mitchellh/nixos-config)
+- [plohan/dotfiles](https://github.com/plohan/dotfiles)
