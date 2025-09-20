@@ -12,6 +12,7 @@
   ungoogled-chromium = pkgs.callPackage ../lib/ungoogled-chromium.nix {};
   gifox = pkgs.callPackage ../lib/gifox.nix {};
   burpsuite = pkgs.callPackage ../lib/burpsuite.nix {};
+  vlc = pkgs.callPackage ../lib/vlc.nix {};
 in {
   environment.systemPackages = with pkgs;
     [
@@ -64,6 +65,7 @@ in {
       vscode
       postman
       openvpn
+      the-unarchiver
     ]
     ++ [
       discord
@@ -78,6 +80,7 @@ in {
       ungoogled-chromium
       gifox
       burpsuite
+      vlc
     ];
 
   system.primaryUser = "yoketh";

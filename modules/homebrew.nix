@@ -8,7 +8,7 @@
   homebrew = {
     enable = true;
     onActivation = {
-      cleanup = "uninstall";
+      cleanup = "zap";
       upgrade = true;
       autoUpdate = true;
     };
@@ -16,12 +16,9 @@
     casks = [
       "playcover-community"
       "orbstack"
-
-      "vlc"
     ];
 
     masApps = {
-      "The Unarchiver" = 425424353;
     };
   };
 }
