@@ -8,6 +8,7 @@
   proxyman = pkgs.callPackage ../lib/proxyman.nix {};
   clop = pkgs.callPackage ../lib/clop.nix {};
   imageoptim = pkgs.callPackage ../lib/imageoptim.nix {};
+  obs = pkgs.callPackage ../lib/obs.nix {};
 in {
   environment.systemPackages = with pkgs;
     [
@@ -67,6 +68,7 @@ in {
       proxyman
       clop
       imageoptim
+      obs
     ];
 
   system.primaryUser = "yoketh";

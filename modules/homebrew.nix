@@ -18,7 +18,6 @@
       "orbstack"
       "gifox"
 
-      "obs"
       "visual-studio-code"
       "postman"
       "openvpn-connect"
