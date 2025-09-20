@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  user,
+  ...
+}: let
   customPkgs = let
     mkPkg = name: pkgs.callPackage ../pkgs/app/${name}/package.nix {};
   in {
@@ -40,7 +44,7 @@ in {
     ++ builtins.attrValues customPkgs;
 
   system = {
-    primaryUser = "yoketh";
+    primaryUser = "${user}";
     stateVersion = 6;
 
     defaults = {
@@ -90,7 +94,7 @@ in {
 
   nix.settings = {
     experimental-features = "nix-command flakes";
-    trusted-users = ["root" "yoketh"];
+    trusted-users = ["root" "${user}"];
     # extra-substituters = "https://devenv.cachix.org";
     # extra-trusted-public-keys = "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=";
   };

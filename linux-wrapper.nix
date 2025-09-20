@@ -2,12 +2,12 @@
   pkgs,
   home-manager,
   ...
-}:
+}: user:
 home-manager.lib.homeManagerConfiguration {
-  pkgs = pkgs;
+  inherit pkgs;
   modules = [
     (import ./modules/home.nix {
-      pkgs = pkgs;
+      inherit pkgs user;
       lib = pkgs.lib;
       isDarwin = false;
     })

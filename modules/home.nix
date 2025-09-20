@@ -2,6 +2,7 @@
   pkgs,
   lib,
   isDarwin,
+  user,
   ...
 }: let
   gcloud = pkgs.google-cloud-sdk.withExtraComponents [pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin];
@@ -13,8 +14,8 @@ in {
 
   programs.home-manager.enable = true;
   home.stateVersion = "25.05";
-  home.username = lib.mkIf (!isDarwin) "yoketh";
-  home.homeDirectory = lib.mkIf (!isDarwin) "/home/yoketh";
+  home.username = lib.mkIf (!isDarwin) "${user}";
+  home.homeDirectory = lib.mkIf (!isDarwin) "/home/${user}";
 
   home.packages = with pkgs; [
     alejandra

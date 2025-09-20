@@ -4,11 +4,11 @@
   nix-homebrew,
   home-manager,
   ...
-}: let
+}: user: let
   system = "aarch64-darwin";
   fontModule = import ./modules/font.nix {inherit pkgs;};
-  systemModule = import ./modules/darwin-config.nix {inherit pkgs;};
-  homebrewModule = import ./modules/homebrew.nix;
+  systemModule = import ./modules/darwin-config.nix {inherit pkgs user;};
+  homebrewModule = import ./modules/homebrew.nix {inherit user;};
 in
   nix-darwin.lib.darwinSystem {
     modules = [
@@ -26,15 +26,15 @@ in
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         home-manager.backupFileExtension = "backup";
-        home-manager.users.yoketh = import ./modules/home.nix {
-          inherit pkgs;
+        home-manager.users."${user}" = import ./modules/home.nix {
+          inherit pkgs user;
           isDarwin = true;
           lib = pkgs.lib;
         };
 
-        users.users.yoketh = {
-          name = "yoketh";
-          home = "/Users/yoketh";
+        users.users."${user}" = {
+          name = "${user}";
+          home = "/Users/${user}";
         };
       }
     ];

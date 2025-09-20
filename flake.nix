@@ -28,27 +28,27 @@
     darwinPkgs = import nixpkgs {
       system = darwinSystem;
       config.allowUnfree = true;
-      config.allowUnsupportedSystem = true;
     };
 
     linuxPkgs = import nixpkgs {
       system = linuxSystem;
       config.allowUnfree = true;
-      config.allowUnsupportedSystem = true;
     };
 
-    mkDarwin = import ./aarch64-darwin.nix {
+    mkDarwin = import ./darwin-wrapper.nix {
       inherit nix-darwin nix-homebrew home-manager darwinPkgs;
       pkgs = darwinPkgs;
     };
 
-    mkLinuxArm = import ./aarch64-linux.nix {
+    mkLinux = import ./linux-wrapper.nix {
       inherit home-manager;
       pkgs = linuxPkgs;
     };
   in {
-    darwinConfigurations."Thanapons-MacBook-Pro" = mkDarwin;
+    darwinConfigurations."Thanapons-MacBook-Pro" = mkDarwin "yoketh";
 
-    homeConfigurations."yoketh" = mkLinuxArm;
+    homeConfigurations."yoketh" = mkLinux "yoketh";
+
+    homeConfigurations."ubuntu" = mkLinux "ubuntu";
   };
 }

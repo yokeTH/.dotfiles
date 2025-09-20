@@ -1,8 +1,8 @@
-{...}: {
+{user, ...}: {
   nix-homebrew = {
     enable = true;
     enableRosetta = true;
-    user = "yoketh";
+    user = "${user}";
   };
 
   homebrew = {
