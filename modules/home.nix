@@ -12,6 +12,11 @@ in {
     ./ghostty.nix
   ];
 
+  nix = {
+    package = pkgs.nix;
+    settings.experimental-features = ["nix-command" "flakes"];
+  };
+
   programs.home-manager.enable = true;
   home.stateVersion = "25.05";
   home.username = lib.mkIf (!isDarwin) "${user}";

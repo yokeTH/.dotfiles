@@ -92,13 +92,6 @@ in {
     };
   };
 
-  nix.settings = {
-    experimental-features = "nix-command flakes";
-    trusted-users = ["root" "${user}"];
-    # extra-substituters = "https://devenv.cachix.org";
-    # extra-trusted-public-keys = "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=";
-  };
-
   nixpkgs.hostPlatform = "aarch64-darwin";
 
   security.pam.services.sudo_local.touchIdAuth = true;
