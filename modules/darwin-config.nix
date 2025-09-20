@@ -1,6 +1,6 @@
 {pkgs, ...}: let
   customPkgs = let
-    mkPkg = name: pkgs.callPackage ../pkgs/app/${name}.package.nix {};
+    mkPkg = name: pkgs.callPackage ../pkgs/app/${name}/package.nix {};
   in {
     discord = mkPkg "discord";
     keyboardcleantool = mkPkg "keyboardcleantool";
