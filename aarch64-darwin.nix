@@ -8,18 +8,13 @@
   system = "aarch64-darwin";
   fontModule = import ./modules/font.nix {inherit pkgs;};
   systemModule = import ./modules/darwin-config.nix {inherit pkgs;};
-  lib = pkgs.lib;
-  stdenv = pkgs.stdenv;
+  homebrewModule = import ./modules/homebrew.nix;
 in
   nix-darwin.lib.darwinSystem {
-    inherit system;
-
-    specialArgs = {inherit pkgs;};
-
     modules = [
       systemModule
       nix-homebrew.darwinModules.nix-homebrew
-      ./modules/homebrew.nix
+      homebrewModule
       fontModule
       home-manager.darwinModules.home-manager
       {
@@ -32,8 +27,9 @@ in
         home-manager.useUserPackages = true;
         home-manager.backupFileExtension = "backup";
         home-manager.users.yoketh = import ./modules/home.nix {
-          inherit pkgs lib;
+          inherit pkgs;
           isDarwin = true;
+          lib = pkgs.lib;
         };
 
         users.users.yoketh = {
