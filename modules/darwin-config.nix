@@ -9,6 +9,7 @@
   clop = pkgs.callPackage ../lib/clop.nix {};
   imageoptim = pkgs.callPackage ../lib/imageoptim.nix {};
   obs = pkgs.callPackage ../lib/obs.nix {};
+  ungoogled-chromium = pkgs.callPackage ../lib/ungoogled-chromium.nix {};
 in {
   environment.systemPackages = with pkgs;
     [
@@ -58,6 +59,9 @@ in {
       modrinth-app
       # proxyman
       google-chrome
+      vscode
+      postman
+      openvpn
     ]
     ++ [
       discord
@@ -69,6 +73,7 @@ in {
       clop
       imageoptim
       obs
+      ungoogled-chromium
     ];
 
   system.primaryUser = "yoketh";

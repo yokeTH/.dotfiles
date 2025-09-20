@@ -18,10 +18,6 @@
       "orbstack"
       "gifox"
 
-      "visual-studio-code"
-      "postman"
-      "openvpn-connect"
-      "ungoogled-chromium"
       "burp-suite"
       "vlc"
     ];
