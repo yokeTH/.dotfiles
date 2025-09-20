@@ -94,5 +94,10 @@ in {
 
   nixpkgs.hostPlatform = "aarch64-darwin";
 
+  nix.settings = {
+    experimental-features = "nix-command flakes";
+    trusted-users = ["root" "${user}"];
+  };
+
   security.pam.services.sudo_local.touchIdAuth = true;
 }

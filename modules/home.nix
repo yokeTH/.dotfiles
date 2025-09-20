@@ -12,10 +12,8 @@ in {
     ./ghostty.nix
   ];
 
-  nix = {
-    package = pkgs.nix;
-    settings.experimental-features = ["nix-command" "flakes"];
-  };
+  nix.package = lib.mkIf (!isDarwin) pkgs.nix;
+  nix.settings.experimental-features = lib.mkIf (!isDarwin) ["nix-command" "flakes"];
 
   programs.home-manager.enable = true;
   home.stateVersion = "25.05";
