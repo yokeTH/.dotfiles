@@ -2,6 +2,7 @@
   stdenv,
   fetchurl,
   _7zz,
+  makeWrapper,
 }:
 stdenv.mkDerivation (finalAttrs: {
   name = "proxyman";
@@ -21,10 +22,11 @@ stdenv.mkDerivation (finalAttrs: {
 
   sourceRoot = ".";
 
-  nativeBuildInputs = [_7zz];
+  nativeBuildInputs = [_7zz makeWrapper];
 
   postInstall = ''
     mkdir -p $out/Applications
     mv Proxyman.app $out/Applications/
+    makeWrapper $out/Applications/Proxyman.app/Contents/MacOS/proxyman-cli $out/bin/proxyman-cli
   '';
 })
