@@ -6,6 +6,7 @@
   macs-fan-control = pkgs.callPackage ../lib/macs-fan-control.nix {};
   figma = pkgs.callPackage ../lib/figma.nix {};
   proxyman = pkgs.callPackage ../lib/proxyman.nix {};
+  clop = pkgs.callPackage ../lib/clop.nix {};
 in {
   environment.systemPackages = with pkgs;
     [
@@ -63,6 +64,7 @@ in {
       figma
       # git-fork
       proxyman
+      clop
     ];
 
   system.primaryUser = "yoketh";
