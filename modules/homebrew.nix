@@ -16,6 +16,7 @@
     casks = [
       "playcover-community"
       "orbstack"
+      "brave-browser"
     ];
 
     masApps = {

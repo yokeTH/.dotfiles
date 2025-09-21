@@ -21,7 +21,7 @@
     nix-homebrew,
     home-manager,
     ...
-  }: let
+  } @ inputs: let
     darwinSystem = "aarch64-darwin";
     linuxSystem = "aarch64-linux";
 
@@ -36,12 +36,12 @@
     };
 
     mkDarwin = import ./darwin-wrapper.nix {
-      inherit nix-darwin nix-homebrew home-manager darwinPkgs;
+      inherit nix-darwin nix-homebrew home-manager darwinPkgs inputs;
       pkgs = darwinPkgs;
     };
 
     mkLinux = import ./linux-wrapper.nix {
-      inherit home-manager;
+      inherit home-manager inputs;
       pkgs = linuxPkgs;
     };
   in {

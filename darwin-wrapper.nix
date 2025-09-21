@@ -3,6 +3,7 @@
   pkgs,
   nix-homebrew,
   home-manager,
+  inputs,
   ...
 }: user: let
   system = "aarch64-darwin";
@@ -27,7 +28,7 @@ in
         home-manager.useUserPackages = true;
         home-manager.backupFileExtension = "backup";
         home-manager.users."${user}" = import ./modules/home.nix {
-          inherit pkgs user;
+          inherit pkgs user inputs;
           isDarwin = true;
           lib = pkgs.lib;
         };

@@ -23,7 +23,7 @@ in {
   environment.systemPackages = with pkgs;
     [
       ghostty-bin
-      brave
+      # brave # move to brew cuz it not trust brave from nix
       notion-app
       jetbrains.idea-community-bin
       slack
@@ -40,6 +40,7 @@ in {
       postman
       openvpn
       the-unarchiver
+      _1password-gui
     ]
     ++ builtins.attrValues customPkgs;
 
@@ -58,7 +59,7 @@ in {
         tilesize = 24;
         show-recents = false;
         persistent-apps = [
-          {app = "${pkgs.brave}/Applications/Brave Browser.app";}
+          {app = "/Applications/Brave Browser.app";}
           {app = "/System/Applications/Mail.app";}
           {app = "${pkgs.zed-editor}/Applications/Zed.app";}
           {app = "${pkgs.ghostty-bin}/Applications/Ghostty.app";}
