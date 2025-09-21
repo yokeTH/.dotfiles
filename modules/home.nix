@@ -71,7 +71,7 @@ in {
       "gpg \"ssh\"" = {
         program =
           if isDarwin
-          then "${pkgs._1password-gui}/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+          then "/Applications/Nix Apps/1Password.app/Contents/MacOS/op-ssh-sign"
           else "${pkgs._1password-gui}/bin/op-ssh-sign";
       };
 
