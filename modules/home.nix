@@ -40,7 +40,6 @@ in {
     bat
     ripgrep
     eza
-    gnupg
 
     fastfetch
 
