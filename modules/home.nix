@@ -74,6 +74,7 @@ in {
           then "${pkgs._1password-gui}/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
           else "${pkgs._1password-gui}/bin/op-ssh-sign";
       };
+
       commit = {
         gpgsign = true;
       };
