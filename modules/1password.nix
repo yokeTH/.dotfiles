@@ -1,7 +1,7 @@
 {...}: {
   xdg.configFile."1Password/ssh/agent.toml".text = ''
     [[ssh-keys]]
-    vault = "Development"
+    vault = "Private"
     item = "SSH-Key"
   '';
 }
