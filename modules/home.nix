@@ -145,8 +145,6 @@ in {
         jn = "jj new";
         jp = "jj git push";
         js = "jj st";
-
-        deploys = "op run -- ${deploys-app}/bin/deploys";
       }
       // (
         if (!isDarwin)
