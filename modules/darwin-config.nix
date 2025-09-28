@@ -18,6 +18,7 @@
     gifox = mkPkg "gifox";
     burpsuite = mkPkg "burpsuite";
     vlc = mkPkg "vlc";
+    tableplus = mkPkg "tableplus";
   };
 in {
   environment.systemPackages = with pkgs;
@@ -33,7 +34,6 @@ in {
       rectangle
       teams
       mongodb-compass
-      tableplus
       modrinth-app
       google-chrome
       vscode

@@ -65,25 +65,35 @@ in {
     enable = true;
     userName = "Thanapon Johdee";
     userEmail = "66236295+yokeTH@users.noreply.github.com";
-    extraConfig = {
-      gpg = {
-        format = "ssh";
-      };
-      "gpg \"ssh\"" = {
-        program =
-          if isDarwin
-          then "${pkgs._1password-gui}/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
-          else "${pkgs._1password-gui}/bin/op-ssh-sign";
-      };
+    extraConfig =
+      {
+        gpg = {
+          format = "ssh";
+        };
+        "gpg \"ssh\"" = {
+          program =
+            if isDarwin
+            then "${pkgs._1password-gui}/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+            else "${pkgs._1password-gui}/bin/op-ssh-sign";
+        };
 
-      commit = {
-        gpgsign = true;
-      };
+        commit = {
+          gpgsign = true;
+        };
 
-      user = {
-        signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOlhqMGCbubg6mYk5OlB5DKIVXDqIBdDfI6fcMChRwD/";
-      };
-    };
+        user = {
+          signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOlhqMGCbubg6mYk5OlB5DKIVXDqIBdDfI6fcMChRwD/";
+        };
+      }
+      // (
+        if isDarwin
+        then {
+          "url \"ssh://git@github.com/\"" = {
+            insteadOf = "https://github.com/";
+          };
+        }
+        else {}
+      );
     aliases = {
       cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 -r git branch -d";
       prettylog = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(r) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
