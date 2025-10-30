@@ -45,6 +45,7 @@
       icon_theme = "Catppuccin Macchiato";
       edit_predictions.disabled_globs = ["*"];
       ui_font_size = 16;
+      ui_font_family = ".ZedSans";
       buffer_font_size = 14;
       terminal = {
         dock = "bottom";
