@@ -31,7 +31,7 @@
     extraPackages = [pkgs.nixd];
     userSettings = {
       vim_mode = true;
-      relative_line_numbers = true;
+      relative_line_numbers = false;
       disable_ai = true;
       tabs = {
         close_position = "left";
