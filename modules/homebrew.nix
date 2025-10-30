@@ -28,7 +28,6 @@
       "microsoft-teams"
       "mongodb-compass"
       "modrinth"
-      "google-chrome"
       "visual-studio-code"
       "postman"
       "keka"
@@ -36,6 +35,7 @@
       "discord"
       "proxyman"
       "tradingview"
+      "ungoogled-chromium"
     ];
 
     masApps = {
