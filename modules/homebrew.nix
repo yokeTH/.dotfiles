@@ -9,7 +9,7 @@
     enable = true;
     onActivation = {
       cleanup = "zap";
-      upgrade = true;
+      upgrade = false;
       autoUpdate = true;
     };
 
@@ -34,7 +34,8 @@
       "keka"
       "1password"
       "discord"
-      "proxyman@5.22.0"
+      "proxyman"
+      "tradingview"
     ];
 
     masApps = {
