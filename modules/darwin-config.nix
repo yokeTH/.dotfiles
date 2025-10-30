@@ -3,46 +3,46 @@
   user,
   ...
 }: let
-  customPkgs = let
-    mkPkg = name: pkgs.callPackage ../pkgs/app/${name}/package.nix {};
-  in {
-    discord = mkPkg "discord";
-    keyboardcleantool = mkPkg "keyboardcleantool";
-    macs-fan-control = mkPkg "macs-fan-control";
-    figma = mkPkg "figma";
-    proxyman = mkPkg "proxyman";
-    clop = mkPkg "clop";
-    imageoptim = mkPkg "imageoptim";
-    obs = mkPkg "obs";
-    ungoogled-chromium = mkPkg "ungoogled-chromium";
-    gifox = mkPkg "gifox";
-    burpsuite = mkPkg "burpsuite";
-    vlc = mkPkg "vlc";
-    tableplus = mkPkg "tableplus";
-  };
+  # customPkgs = let
+  #   mkPkg = name: pkgs.callPackage ../pkgs/app/${name}/package.nix {};
+  # in {
+  #   discord = mkPkg "discord";
+  #   keyboardcleantool = mkPkg "keyboardcleantool";
+  #   macs-fan-control = mkPkg "macs-fan-control";
+  #   figma = mkPkg "figma";
+  #   proxyman = mkPkg "proxyman";
+  #   clop = mkPkg "clop";
+  #   imageoptim = mkPkg "imageoptim";
+  #   obs = mkPkg "obs";
+  #   ungoogled-chromium = mkPkg "ungoogled-chromium";
+  #   gifox = mkPkg "gifox";
+  #   burpsuite = mkPkg "burpsuite";
+  #   vlc = mkPkg "vlc";
+  #   tableplus = mkPkg "tableplus";
+  # };
 in {
-  environment.systemPackages = with pkgs;
-    [
-      ghostty-bin
-      # brave # move to brew cuz it not trust brave from nix
-      notion-app
-      jetbrains.idea-community-bin
-      slack
-      zoom-us
-      raycast
-      appcleaner
-      rectangle
-      teams
-      mongodb-compass
-      modrinth-app
-      google-chrome
-      vscode
-      postman
-      openvpn
-      the-unarchiver
-      _1password-gui
-    ]
-    ++ builtins.attrValues customPkgs;
+  # environment.systemPackages = with pkgs;
+  #   [
+  #     # ghostty-bin
+  #     # brave # move to brew cuz it not trust brave from nix
+  #     # notion-app
+  #     # jetbrains.idea-community-bin
+  #     # slack
+  #     # zoom-us
+  #     # raycast
+  #     # appcleaner
+  #     # rectangle
+  #     # teams
+  #     # mongodb-compass
+  #     # modrinth-app
+  #     # google-chrome
+  #     # vscode
+  #     # postman
+  #     # openvpn
+  #     # the-unarchiver
+  #     # _1password-gui
+  #   ]
+  #   ++ builtins.attrValues customPkgs;
 
   system = {
     primaryUser = "${user}";
@@ -62,8 +62,8 @@ in {
           {app = "/Applications/Brave Browser.app";}
           {app = "/System/Applications/Mail.app";}
           {app = "${pkgs.zed-editor}/Applications/Zed.app";}
-          {app = "${pkgs.ghostty-bin}/Applications/Ghostty.app";}
-          {app = "${customPkgs.discord}/Applications/Discord.app";}
+          {app = "/Applications/Ghostty.app";}
+          {app = "/Applications/Discord.app";}
           {spacer = {small = true;};}
         ];
       };

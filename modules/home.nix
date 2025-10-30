@@ -59,14 +59,18 @@ in {
     ffmpeg
     _1password-cli
     deploys-app
+    zed-discord-presence
   ];
 
   programs.git = {
     enable = true;
-    userName = "Thanapon Johdee";
-    userEmail = "66236295+yokeTH@users.noreply.github.com";
-    extraConfig =
+    settings =
       {
+        user = {
+          name = "Thanapon Johdee";
+          email = "66236295+yokeTH@users.noreply.github.com";
+        };
+
         gpg = {
           format = "ssh";
         };
@@ -84,6 +88,12 @@ in {
         user = {
           signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOlhqMGCbubg6mYk5OlB5DKIVXDqIBdDfI6fcMChRwD/";
         };
+
+        aliases = {
+          cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 -r git branch -d";
+          prettylog = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(r) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
+          root = "rev-parse --show-toplevel";
+        };
       }
       // (
         if isDarwin
@@ -94,11 +104,6 @@ in {
         }
         else {}
       );
-    aliases = {
-      cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 -r git branch -d";
-      prettylog = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(r) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
-      root = "rev-parse --show-toplevel";
-    };
   };
 
   programs.fzf = {

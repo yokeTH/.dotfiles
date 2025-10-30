@@ -87,7 +87,24 @@
             };
           };
         };
+        rust-analyzer = {
+          initialization_options = {
+            inlayHints = {
+              enable = true;
+              showTypeHints = true;
+              maxLength = null;
+              lifetimeElisionHints = {
+                enable = "skip_trivial";
+                useParameterNames = true;
+              };
+              closureReturnTypeHints = {
+                enable = "always";
+              };
+            };
+          };
+        };
       };
+      inlay_hints.enabled = true;
     };
     userKeymaps = [
       # {
