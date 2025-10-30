@@ -30,13 +30,7 @@
     ];
     extraPackages = [pkgs.nixd];
     userSettings = {
-      assistant = {
-        version = "2";
-        default_model = {
-          provider = "copilot_chat";
-          model = "gpt-4.1";
-        };
-      };
+      disable_ai = true;
       tabs = {
         close_position = "left";
         file_icons = true;
@@ -47,8 +41,8 @@
       };
       preferred_line_length = 120;
       soft_wrap = "bounded";
-      theme = "Catppuccin Frappé";
-      icon_theme = "Catppuccin Frappé";
+      theme = "Catppuccin Macchiato";
+      icon_theme = "Catppuccin Macchiato";
       edit_predictions.disabled_globs = ["*"];
       ui_font_size = 16;
       buffer_font_size = 14;
