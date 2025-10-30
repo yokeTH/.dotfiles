@@ -181,7 +181,7 @@ in {
   home.sessionVariables = {
     EDITOR =
       if isDarwin
-      then "zed"
+      then "zed --wait"
       else "vim";
     TERM = "xterm-256color";
     LANG = "en_US.UTF-8";
