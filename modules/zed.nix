@@ -117,6 +117,12 @@
           "cmd-alt-shift-down" = "editor::AddSelectionBelow";
         };
       }
+      {
+        context = "Terminal";
+        bindings = {
+          "ctrl-w t" = "terminal_panel::ToggleFocus";
+        };
+      }
     ];
   };
 }
