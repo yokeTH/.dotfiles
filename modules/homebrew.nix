@@ -36,6 +36,7 @@
       "proxyman"
       "tradingview"
       "ungoogled-chromium"
+      "fork"
     ];
 
     masApps = {
