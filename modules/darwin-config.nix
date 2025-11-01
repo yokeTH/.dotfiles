@@ -87,6 +87,8 @@
 
     defaults.CustomUserPreferences = {
       NSGlobalDomain = {
+        KeyRepeat = 2;
+        InitialKeyRepeat = 15;
         WebKitDeveloperExtras = true;
       };
       "com.apple.Safari" = {
