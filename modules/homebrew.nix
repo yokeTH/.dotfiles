@@ -37,6 +37,7 @@
       "tradingview"
       "ungoogled-chromium"
       "fork"
+      "music-presence"
     ];
 
     masApps = {
