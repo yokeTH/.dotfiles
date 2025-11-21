@@ -60,6 +60,7 @@ in {
     _1password-cli
     deploys-app
     zed-discord-presence
+    cloudflared
   ];
 
   programs.git = {
