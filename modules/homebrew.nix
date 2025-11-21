@@ -38,6 +38,7 @@
       "ungoogled-chromium"
       "fork"
       "music-presence"
+      "vlc"
     ];
 
     masApps = {
