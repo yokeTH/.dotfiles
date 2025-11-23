@@ -75,6 +75,7 @@ in {
 
         gpg = {
           format = "ssh";
+          allowedSignersFile = "~/.config/git/allowed_signers";
         };
         "gpg \"ssh\"" = {
           program =
@@ -179,6 +180,9 @@ in {
   };
 
   home.file.".p10k.zsh".source = ../dotfiles/p10k.zsh;
+  home.file.".config/git/allowed_signers".text = ''
+    Thanapon Johdee ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOlhqMGCbubg6mYk5OlB5DKIVXDqIBdDfI6fcMChRwD/
+  '';
 
   home.sessionVariables = {
     EDITOR =
