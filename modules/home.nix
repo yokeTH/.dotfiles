@@ -79,7 +79,7 @@ in {
         "gpg \"ssh\"" = {
           program =
             if isDarwin
-            then "${pkgs._1password-gui}/.bitwarden-ssh-agent.sock"
+            then "${pkgs._1password-gui}/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
             else "${pkgs._1password-gui}/bin/op-ssh-sign";
 
           allowedSignersFile = "~/.config/git/allowed_signers";
