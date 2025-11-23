@@ -61,6 +61,7 @@ in {
     deploys-app
     zed-discord-presence
     cloudflared
+    bitwarden-cli
   ];
 
   programs.git = {

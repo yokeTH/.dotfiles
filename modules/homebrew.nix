@@ -39,6 +39,7 @@
       "fork"
       "music-presence"
       "vlc"
+      "bitwarden"
     ];
 
     masApps = {
