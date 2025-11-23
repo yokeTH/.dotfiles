@@ -196,11 +196,8 @@ in {
     LC_ALL = "en_US.UTF-8";
     SSH_AUTH_SOCK =
       if isDarwin
-      then "/Users/${user}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+      then "/Users/${user}/.bitwarden-ssh-agent.sock"
       else "~/.1password/agent.sock";
-
-    DEPLOYS_AUTH_USER = "op://Private/Deploys-Default/username";
-    DEPLOYS_AUTH_PASS = "op://Private/Deploys-Default/credential";
   };
 
   xdg.enable = true;
