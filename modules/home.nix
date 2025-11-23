@@ -75,13 +75,14 @@ in {
 
         gpg = {
           format = "ssh";
-          allowedSignersFile = "~/.config/git/allowed_signers";
         };
         "gpg \"ssh\"" = {
           program =
             if isDarwin
             then "${pkgs._1password-gui}/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
             else "${pkgs._1password-gui}/bin/op-ssh-sign";
+
+          allowedSignersFile = "~/.config/git/allowed_signers";
         };
 
         commit = {
