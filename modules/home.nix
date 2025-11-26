@@ -63,6 +63,7 @@ in {
     cloudflared
     bitwarden-cli
     gnupg
+    jujutsu
   ];
 
   programs.git = {
