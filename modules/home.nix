@@ -62,6 +62,7 @@ in {
     zed-discord-presence
     cloudflared
     bitwarden-cli
+    gnupg
   ];
 
   programs.git = {
