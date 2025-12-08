@@ -27,6 +27,10 @@
       "sql"
       "vue"
       "nix"
+      "scss"
+      "zig"
+      "biome"
+      "lua"
     ];
     extraPackages = [pkgs.nixd];
     userSettings = {
