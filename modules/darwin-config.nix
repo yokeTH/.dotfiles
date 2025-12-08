@@ -96,13 +96,94 @@
       };
       "com.apple.symbolichotkeys" = {
         AppleSymbolicHotKeys = {
-          # Disable 'Cmd + Space' for Spotlight Search
+          "118" = {
+            enabled = false;
+            value = {
+              parameters = [
+                65535
+                18
+                262144
+              ];
+              type = "standard";
+            };
+          };
+          "119" = {
+            enabled = false;
+            value = {
+              parameters = [
+                65535
+                19
+                262144
+              ];
+              type = "standard";
+            };
+          };
+          "120" = {
+            enabled = false;
+            value = {
+              parameters = [
+                65535
+                20
+                262144
+              ];
+              type = "standard";
+            };
+          };
+          "176" = {
+            enabled = false;
+            value = {
+              type = "SAE1.0";
+            };
+          };
           "64" = {
             enabled = false;
           };
-          # Disable 'Cmd + Alt + Space' for Finder search window
           "65" = {
             enabled = false;
+          };
+          "79" = {
+            enabled = true;
+            value = {
+              parameters = [
+                65535
+                123
+                8650752
+              ];
+              type = "standard";
+            };
+          };
+          "80" = {
+            enabled = true;
+            value = {
+              parameters = [
+                65535
+                123
+                8781824
+              ];
+              type = "standard";
+            };
+          };
+          "81" = {
+            enabled = true;
+            value = {
+              parameters = [
+                65535
+                124
+                8650752
+              ];
+              type = "standard";
+            };
+          };
+          "82" = {
+            enabled = true;
+            value = {
+              parameters = [
+                65535
+                124
+                8781824
+              ];
+              type = "standard";
+            };
           };
         };
       };
