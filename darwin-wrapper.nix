@@ -27,11 +27,16 @@ in
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         home-manager.backupFileExtension = "backup";
-        home-manager.users."${user}" = import ./modules/home.nix {
-          inherit pkgs user inputs;
-          isDarwin = true;
-          lib = pkgs.lib;
-        };
+        home-manager.users."${user}" = {
+          config,
+          pkgs,
+          lib,
+          ...
+        }:
+          import ./modules/home.nix {
+            inherit config pkgs lib user inputs;
+            isDarwin = true;
+          };
 
         users.users."${user}" = {
           name = "${user}";

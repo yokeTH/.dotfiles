@@ -13,6 +13,14 @@
       autoUpdate = true;
     };
 
+    taps = [
+      "tw93/tap"
+    ];
+
+    brews = [
+      "tw93/tap/mole"
+    ];
+
     casks = [
       "playcover-community"
       "orbstack"

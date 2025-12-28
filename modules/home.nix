@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   lib,
   isDarwin,
@@ -22,7 +23,7 @@ in {
   nix.settings.experimental-features = lib.mkIf (!isDarwin) ["nix-command" "flakes"];
 
   programs.home-manager.enable = true;
-  home.stateVersion = "25.05";
+  home.stateVersion = "26.05";
   home.username = lib.mkIf (!isDarwin) "${user}";
   home.homeDirectory = lib.mkIf (!isDarwin) "/home/${user}";
 
@@ -123,6 +124,7 @@ in {
 
   programs.zsh = {
     enable = true;
+    dotDir = "${config.xdg.configHome}/zsh";
     enableCompletion = true;
     autosuggestion.enable = true;
     autosuggestion.highlight = "fg=cyan";
