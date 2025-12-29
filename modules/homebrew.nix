@@ -48,6 +48,7 @@
       "music-presence"
       "vlc"
       "bitwarden"
+      "obs"
     ];
 
     masApps = {
