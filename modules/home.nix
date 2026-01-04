@@ -208,4 +208,12 @@ in {
   };
 
   xdg.enable = true;
+
+  programs.gpg.enable = true;
+
+  services.gpg-agent = {
+    enable = true;
+    enableZshIntegration = true;
+    pinentry.package = pkgs.pinentry_mac;
+  };
 }
