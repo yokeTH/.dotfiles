@@ -61,7 +61,7 @@
         tilesize = 24;
         show-recents = false;
         persistent-apps = [
-          {app = "/Applications/Brave Browser.app";}
+          {app = "${pkgs.brave}/Applications/Brave Browser.app";}
           {app = "/System/Applications/Mail.app";}
           {app = "${pkgs.zed-editor}/Applications/Zed.app";}
           {app = "/Applications/Ghostty.app";}

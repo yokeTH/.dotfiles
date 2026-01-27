@@ -1,0 +1,203 @@
+{
+  "NewTabPage": {
+    "CustomizeChromeExplicitlyClosed": true
+  },
+  "accessibility": {
+    "captions": {
+      "headless_caption_enabled": false
+    }
+  },
+  "ack_existing_ntp_extensions": true,
+  "alternate_error_pages": {
+    "backup": false
+  },
+  "autocomplete": {
+    "retention_policy_last_version": 144
+  },
+  "autofill": {
+    "last_version_deduped": 144
+  },
+  "brave": {
+    "accelerators": {
+      "33000": ["Command+BracketLeft"],
+      "33001": ["Command+BracketRight"],
+      "33002": ["Command+KeyR"],
+      "33003": ["Command+Shift+KeyH"],
+      "33006": ["Command+Period"],
+      "33007": ["Command+Shift+KeyR"],
+      "34000": ["Command+KeyN"],
+      "34001": ["Command+Shift+KeyN"],
+      "34012": ["Command+Shift+KeyW"],
+      "34014": ["Command+KeyT"],
+      "34015": ["Command+KeyW"],
+      "34016": ["Control+Tab", "Command+Shift+BracketRight", "Control+PageDown", "Command+Alt+ArrowRight"],
+      "34017": ["Control+Shift+Tab", "Command+Shift+BracketLeft", "Control+PageUp", "Command+Alt+ArrowLeft"],
+      "34018": ["Command+Digit1", "Command+Numpad1"],
+      "34019": ["Command+Digit2", "Command+Numpad2"],
+      "34020": ["Command+Digit3", "Command+Numpad3"],
+      "34021": ["Command+Digit4", "Command+Numpad4"],
+      "34022": ["Command+Digit5", "Command+Numpad5"],
+      "34023": ["Command+Digit6", "Command+Numpad6"],
+      "34024": ["Command+Digit7", "Command+Numpad7"],
+      "34025": ["Command+Digit8", "Command+Numpad8"],
+      "34026": ["Command+Digit9", "Command+Numpad9"],
+      "34028": ["Command+Shift+KeyT"],
+      "34030": ["Command+Control+Fn+KeyF"],
+      "34031": ["Command+KeyQ"],
+      "34032": ["Control+Shift+PageDown"],
+      "34033": ["Control+Shift+PageUp"],
+      "34046": ["Command+KeyM"],
+      "34055": ["Command+Alt+KeyN"],
+      "34062": ["Command+Comma"],
+      "34100": ["Command+Control+KeyC"],
+      "34101": ["Command+Control+KeyP"],
+      "34102": ["Command+Control+KeyX"],
+      "34103": ["Command+Control+KeyZ"],
+      "34104": ["Command+Control+KeyW"],
+      "35000": ["Command+KeyD"],
+      "35001": ["Command+Shift+KeyD"],
+      "35002": ["Command+Alt+KeyU"],
+      "35003": ["Command+KeyP"],
+      "35004": ["Command+KeyS"],
+      "35006": ["Command+Shift+KeyI"],
+      "35007": ["Command+Alt+KeyP"],
+      "35031": ["Command+Shift+KeyS"],
+      "36000": ["Command+KeyX"],
+      "36001": ["Command+KeyC"],
+      "36003": ["Command+KeyV"],
+      "37000": ["Command+KeyF"],
+      "37001": ["Command+KeyG"],
+      "37002": ["Command+Shift+KeyG"],
+      "37003": ["Escape"],
+      "38001": ["Command+Equal"],
+      "38002": ["Command+Digit0"],
+      "38003": ["Command+Minus"],
+      "39001": ["Command+KeyL"],
+      "39002": ["Command+Alt+KeyF"],
+      "39004": ["Command+Alt+ArrowDown"],
+      "39005": ["Command+Alt+ArrowUp"],
+      "39007": ["Command+Alt+Shift+KeyA"],
+      "40000": ["Command+KeyO"],
+      "40004": ["Command+Alt+KeyI"],
+      "40005": ["Command+Alt+KeyJ"],
+      "40009": ["Command+Shift+KeyB"],
+      "40010": ["Command+KeyY"],
+      "40011": ["Command+Alt+KeyB"],
+      "40012": ["Command+Shift+KeyJ", "Command+Alt+KeyL"],
+      "40013": ["Command+Shift+Backspace"],
+      "40015": ["Command+Comma"],
+      "40023": ["Command+Shift+KeyC", "Command+Alt+KeyC"],
+      "40134": ["Command+Shift+KeyM"],
+      "40237": ["F12"],
+      "40250": ["Command+Shift+KeyF"],
+      "40260": ["F7"],
+      "52500": ["Command+Shift+KeyA"],
+      "56003": ["Command+Alt+KeyN"],
+      "56041": ["Control+KeyM"],
+      "56044": ["Command+KeyB"],
+      "56301": ["Command+Shift+KeyP"]
+    },
+    "ai_chat": {
+      "autocomplete_provider_enabled": false,
+      "context_menu_enabled": false,
+      "show_toolbar_button": false,
+      "storage_enabled": true,
+      "tab_organization_enabled": false
+    },
+    "brave_ads": {
+      "should_allow_ads_subdivision_targeting": false
+    },
+    "brave_vpn": {
+      "show_button": false
+    },
+    "default_private_search_provider_data": {
+      "input_encodings": ["UTF-8"],
+      "keyword": ":g",
+      "short_name": "Google",
+      "suggestions_url": "{google:baseSuggestURL}search?{google:searchFieldtrialParameter}client={google:suggestClient}&gs_ri={google:suggestRid}&xssi=t&q={searchTerms}&{google:inputType}{google:omniboxFocusType}{google:cursorPosition}{google:currentPageUrl}{google:pageClassification}{google:clientCacheTimeToLive}{google:searchVersion}{google:sessionToken}{google:prefetchQuery}sugkey={google:suggestAPIKeyParameter}",
+      "url": "{google:baseURL}search?q={searchTerms}&{google:RLZ}{google:originalQueryForSuggestion}{google:assistedQueryStats}{google:searchFieldtrialParameter}{google:language}{google:prefetchSource}{google:searchClient}{google:sourceId}{google:contextualSearchVersion}ie={inputEncoding}"
+    },
+    "enable_media_router_on_restart": true,
+    "linkedin_embed_default": true,
+    "location_bar_is_wide": false,
+    "migrated_search_default_in_jp": true,
+    "new_tab_page": {
+      "shows_options": 2
+    },
+    "rewards": {
+      "show_brave_rewards_button_in_location_bar": false
+    },
+    "search": {
+      "default_version": 32
+    },
+    "shields_settings_version": 4,
+    "show_bookmarks_button": false,
+    "show_side_panel_button": false,
+    "sidebar": {
+      "hidden_built_in_items": [7],
+      "last_used_built_in_item_type": 0,
+      "sidebar_items": [
+        { "built_in_item_type": 1, "type": 0 },
+        { "built_in_item_type": 2, "type": 0 },
+        { "built_in_item_type": 3, "type": 0 },
+        { "built_in_item_type": 4, "type": 0 }
+      ]
+    },
+    "tabs": {
+      "vertical_tabs_collapsed": true,
+      "vertical_tabs_enabled": true
+    },
+    "top_site_suggestions_enabled": false,
+    "wallet": {
+      "aurora_mainnet_migrated": true,
+      "custom_networks": { "goerli_migrated": true },
+      "eip1559_chains_migrated": true,
+      "is_compressed_nft_migrated": true,
+      "is_spl_token_program_migrated": true
+    }
+  },
+  "browser": {
+    "show_fullscreen_toolbar": true
+  },
+  "default_apps_install_state": 3,
+  "intl": {
+    "selected_languages": "en-US,en"
+  },
+  "migrated_user_scripts_toggle": true,
+  "ntp": {
+    "num_personal_suggestions": 0
+  },
+  "omnibox": {
+    "prevent_url_elisions": false
+  },
+  "privacy_sandbox": {
+    "first_party_sets_data_access_allowed_initialized": true,
+    "first_party_sets_enabled": false,
+    "m1": {
+      "ad_measurement_enabled": false,
+      "fledge_enabled": false,
+      "topics_enabled": false
+    }
+  },
+  "safety_hub": {
+    "unused_site_permissions_revocation": {
+      "migration_completed": true
+    }
+  },
+  "signin": {
+    "allowed": false,
+    "cookie_clear_on_exit_migration_notice_complete": true
+  },
+  "site_search_settings": {
+    "overridden_keywords": []
+  },
+  "spellcheck": {
+    "dictionaries": ["en-GB"]
+  },
+  "sync": {
+    "encryption_bootstrap_token_per_account_migration_done": true,
+    "feature_status_for_sync_to_signin": 5
+  },
+  "syncing_theme_prefs_migrated_to_non_syncing": true,
+  "translate_site_blacklist": []
+}

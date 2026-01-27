@@ -24,7 +24,6 @@
     casks = [
       "playcover-community"
       "orbstack"
-      "brave-browser"
       "ghostty"
       "notion"
       "intellij-idea-ce"
