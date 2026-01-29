@@ -48,6 +48,7 @@
       "vlc"
       "bitwarden"
       "obs"
+      "shottr"
     ];
 
     masApps = {
