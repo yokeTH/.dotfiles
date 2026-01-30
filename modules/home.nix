@@ -246,6 +246,10 @@ in {
     package = pkgs.brave;
 
     extensions = map (id: {id = id;}) braveExtensions;
+
+    commandLineArgs = [
+      "--disable-auto-update"
+    ];
   };
 
   home.activation.configureBrave = lib.hm.dag.entryAfter ["writeBoundary"] ''
