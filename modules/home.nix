@@ -199,8 +199,13 @@ in {
 
   programs.jujutsu = {
     enable = true;
-
+    package = pkgs.jujutsu;
     settings = {
+      user = {
+        name = "Thanapon Johdee";
+        email = "66236295+yokeTH@users.noreply.github.com";
+      };
+
       ui.show-cryptographic-signatures = true;
 
       signing = {
