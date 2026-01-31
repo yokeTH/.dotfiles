@@ -98,11 +98,6 @@ in {
           format = "ssh";
         };
         "gpg \"ssh\"" = {
-          program =
-            if isDarwin
-            then "${pkgs._1password-gui}/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
-            else "${pkgs._1password-gui}/bin/op-ssh-sign";
-
           allowedSignersFile = "~/.config/git/allowed_signers";
         };
 
@@ -202,6 +197,23 @@ in {
     };
   };
 
+  programs.jujutsu = {
+    enable = true;
+
+    settings = {
+      ui.show-cryptographic-signatures = true;
+
+      signing = {
+        backend = "ssh";
+        behavior = "own";
+        key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOlhqMGCbubg6mYk5OlB5DKIVXDqIBdDfI6fcMChRwD/";
+        backends.ssh = {
+          allowed-signers = "${config.xdg.configHome}/jj/allowed_signers";
+        };
+      };
+    };
+  };
+
   home.file =
     {
       ".p10k.zsh".source = ../dotfiles/p10k.zsh;
@@ -222,16 +234,13 @@ in {
     LANG = "en_US.UTF-8";
     LC_CTYPE = "en_US.UTF-8";
     LC_ALL = "en_US.UTF-8";
-    SSH_AUTH_SOCK =
-      if isDarwin
-      then "/Users/${user}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
-      else "~/.1password/agent.sock";
-
-    DEPLOYS_AUTH_USER = "op://Private/Deploys-Default/username";
-    DEPLOYS_AUTH_PASS = "op://Private/Deploys-Default/credential";
+    SSH_AUTH_SOCK = "$HOME/.bitwarden-ssh-agent.sock";
   };
 
   xdg.enable = true;
+  xdg.configFile."jj/allowed_signers".text = ''
+    66236295+yokeTH@users.noreply.github.com namespaces="git" ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOlhqMGCbubg6mYk5OlB5DKIVXDqIBdDfI6fcMChRwD/
+  '';
 
   programs.gpg.enable = true;
 
