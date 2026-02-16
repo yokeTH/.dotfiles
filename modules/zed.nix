@@ -104,6 +104,11 @@
             };
           };
         };
+        biome = {
+          settings = {
+            require_config_file = true;
+          };
+        };
       };
       inlay_hints.enabled = true;
     };
