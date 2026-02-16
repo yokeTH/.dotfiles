@@ -49,6 +49,7 @@
       "bitwarden"
       "obs"
       "shottr"
+      "imageoptim"
     ];
 
     masApps = {
