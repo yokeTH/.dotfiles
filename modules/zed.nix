@@ -44,13 +44,6 @@
       };
       buffer_line_height = "comfortable";
       buffer_font_family = ".ZedMono";
-      agent = {
-        default_model = {
-          provider = "copilot_chat";
-          model = "gpt-4.1";
-        };
-        model_parameters = [];
-      };
       auto_install_extensions = {
         catppuccin = true;
         catppuccin-icons = true;
