@@ -61,8 +61,6 @@ in {
     ripgrep
     eza
 
-    fastfetch
-
     zulu
     ngrok
 
@@ -109,6 +107,10 @@ in {
           signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOlhqMGCbubg6mYk5OlB5DKIVXDqIBdDfI6fcMChRwD/";
         };
 
+        init = {
+          defaultBranch = "main";
+        };
+
         aliases = {
           cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 -r git branch -d";
           prettylog = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(r) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
@@ -135,13 +137,15 @@ in {
   programs.direnv.enableZshIntegration = true;
   programs.direnv.nix-direnv.enable = true;
 
+  programs.fastfetch.enable = true;
+
   programs.zsh = {
     enable = true;
     dotDir = "${config.xdg.configHome}/zsh";
     enableCompletion = true;
     autosuggestion.enable = true;
     autosuggestion.highlight = "fg=cyan";
-    syntaxHighlighting.enable = true;
+    enableFastSyntaxHighlighting = true;
     historySubstringSearch.enable = true;
     history.size = 10000;
 
