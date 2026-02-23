@@ -46,11 +46,6 @@ in {
   home.homeDirectory = lib.mkIf (!isDarwin) "/home/${user}";
 
   home.packages = with pkgs; [
-    alejandra
-    nixd
-    nil
-    devenv
-
     neovim
     fzf
     zsh
