@@ -34,39 +34,72 @@
     ];
     extraPackages = [pkgs.nixd];
     userSettings = {
-      vim_mode = true;
-      relative_line_numbers = false;
-      disable_ai = true;
-      tabs = {
-        close_position = "left";
+      file_finder = {
         file_icons = true;
-        git_status = true;
-        activate_on_close = "history";
-        show_close_button = "hover";
-        show_diagnostics = "errors";
       };
-      preferred_line_length = 120;
-      soft_wrap = "bounded";
-      theme = "Catppuccin Macchiato";
-      icon_theme = "Catppuccin Macchiato";
-      edit_predictions.disabled_globs = ["*"];
-      ui_font_size = 16;
-      ui_font_family = ".ZedSans";
+      title_bar = {
+        show_project_items = true;
+        show_branch_name = true;
+        show_branch_icon = false;
+      };
+      buffer_line_height = "comfortable";
+      buffer_font_family = ".ZedMono";
+      agent = {
+        default_model = {
+          provider = "copilot_chat";
+          model = "gpt-4.1";
+        };
+        model_parameters = [];
+      };
+      auto_install_extensions = {
+        catppuccin = true;
+        catppuccin-icons = true;
+        csv = true;
+        cucumber = true;
+        docker-compose = true;
+        dockerfile = true;
+        env = true;
+        git-firefly = true;
+        golangci-lint = true;
+        html = true;
+        java = true;
+        ktrz-monokai = true;
+        macos-classic = true;
+        make = true;
+        nix = true;
+        php = true;
+        prisma = true;
+        proto = true;
+        ruby = true;
+        sql = true;
+        svelte = true;
+        toml = true;
+        verilog = true;
+        vue = true;
+        xml = true;
+        biome = true;
+        lua = true;
+        scss = true;
+        zig = true;
+      };
       buffer_font_size = 14;
-      terminal = {
-        dock = "bottom";
-        font_family = "JetBrainsMono Nerd Font";
-        font_size = 14;
+      edit_predictions = {
+        disabled_globs = ["*"];
+      };
+      icon_theme = {
+        mode = "system";
+        light = "Catppuccin Latte";
+        dark = "Catppuccin Macchiato";
+      };
+      inlay_hints = {
+        enabled = true;
       };
       languages = {
-        TOML = {
-          language_servers = ["!air.toml"];
-        };
         Nix = {
           formatter = {
             external = {
-              command = "alejandra";
               arguments = ["--quiet" "--"];
+              command = "alejandra";
             };
           };
         };
@@ -77,29 +110,32 @@
             };
           };
         };
+        TOML = {
+          language_servers = ["!air.toml"];
+        };
       };
       lsp = {
+        rust-analyzer = {
+          initialization_options = {
+            inlayHints = {
+              closureReturnTypeHints = {
+                enable = "always";
+              };
+              enable = true;
+              lifetimeElisionHints = {
+                enable = "skip_trivial";
+                useParameterNames = true;
+              };
+              maxLength = null;
+              showTypeHints = true;
+            };
+          };
+        };
         vtsls = {
           settings = {
             typescript = {
               preferences = {
                 importModuleSpecifier = "non-relative";
-              };
-            };
-          };
-        };
-        rust-analyzer = {
-          initialization_options = {
-            inlayHints = {
-              enable = true;
-              showTypeHints = true;
-              maxLength = null;
-              lifetimeElisionHints = {
-                enable = "skip_trivial";
-                useParameterNames = true;
-              };
-              closureReturnTypeHints = {
-                enable = "always";
               };
             };
           };
@@ -110,7 +146,34 @@
           };
         };
       };
-      inlay_hints.enabled = true;
+      preferred_line_length = 120;
+      soft_wrap = "bounded";
+      tabs = {
+        activate_on_close = "history";
+        close_position = "left";
+        file_icons = true;
+        git_status = true;
+        show_close_button = "hover";
+        show_diagnostics = "errors";
+      };
+      terminal = {
+        dock = "bottom";
+        font_family = "JetBrainsMono Nerd Font";
+        font_size = 14;
+      };
+      theme = {
+        mode = "system";
+        light = "Catppuccin Latte";
+        dark = "Catppuccin Macchiato";
+      };
+      ui_font_size = 16;
+      ui_font_family = ".ZedMono";
+      ui_font_features = {
+        calt = true;
+      };
+      vim_mode = true;
+      relative_line_numbers = "disabled";
+      # disable_ai = true;
     };
     userKeymaps = [
       # {
