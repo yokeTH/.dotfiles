@@ -140,7 +140,7 @@ in {
     enableCompletion = true;
     autosuggestion.enable = true;
     autosuggestion.highlight = "fg=cyan";
-    enableFastSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
     historySubstringSearch.enable = true;
     history.size = 10000;
 
