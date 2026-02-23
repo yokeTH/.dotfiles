@@ -66,7 +66,7 @@ in {
     zulu
     ngrok
 
-    uxplay
+    # uxplay
 
     git
     gh
