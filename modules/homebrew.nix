@@ -50,6 +50,7 @@
       "obs"
       "shottr"
       "imageoptim"
+      "tablepro"
     ];
 
     masApps = {

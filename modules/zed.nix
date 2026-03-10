@@ -29,7 +29,6 @@
       "nix"
       "scss"
       "zig"
-      "biome"
       "lua"
     ];
     extraPackages = [pkgs.nixd];
