@@ -74,13 +74,13 @@
         scss = true;
         zig = true;
       };
-      buffer_font_size = 14;
+      buffer_font_size = 13;
       edit_predictions = {
         disabled_globs = ["*"];
       };
       icon_theme = {
         mode = "system";
-        light = "Catppuccin Latte";
+        light = "Catppuccin Macchiato";
         dark = "Catppuccin Macchiato";
       };
       inlay_hints = {
@@ -155,11 +155,11 @@
       };
       theme = {
         mode = "system";
-        light = "Catppuccin Latte";
+        light = "Catppuccin Macchiato";
         dark = "Catppuccin Macchiato";
       };
       ui_font_size = 16;
-      ui_font_family = ".ZedMono";
+      ui_font_family = ".ZedSans";
       ui_font_features = {
         calt = true;
       };
