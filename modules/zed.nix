@@ -30,6 +30,7 @@
       "scss"
       "zig"
       "lua"
+      "discord-presence"
     ];
     extraPackages = [pkgs.nixd];
     userSettings = {

@@ -4,7 +4,6 @@
   lib,
   isDarwin,
   user,
-  inputs,
   ...
 }: let
   gcloud = pkgs.google-cloud-sdk.withExtraComponents [pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin];
@@ -60,7 +59,7 @@ in {
     eza
 
     zulu
-    ngrok
+    # ngrok
 
     # uxplay
 
@@ -72,11 +71,11 @@ in {
     tree
 
     ffmpeg
-    _1password-cli
+    # _1password-cli
     deploys-app
     zed-discord-presence
     cloudflared
-    bitwarden-cli
+    # bitwarden-cli
     gnupg
     jujutsu
   ];
