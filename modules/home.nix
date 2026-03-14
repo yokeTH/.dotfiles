@@ -257,29 +257,29 @@ in {
     pinentry.package = pkgs.pinentry_mac;
   };
 
-  # programs.chromium = {
-  #   enable = true;
-  #   package = pkgs.brave;
+  programs.chromium = {
+    enable = true;
+    package = pkgs.brave;
 
-  #   extensions = map (id: {id = id;}) braveExtensions;
+    extensions = map (id: {id = id;}) braveExtensions;
 
-  #   commandLineArgs = [
-  #     "--disable-auto-update"
-  #   ];
-  # };
+    commandLineArgs = [
+      "--disable-auto-update"
+    ];
+  };
 
-  # home.activation.configureBrave = lib.hm.dag.entryAfter ["writeBoundary"] ''
-  #   SOURCE_PREFS="${pkgs.writeText "brave-golden-prefs.json" (builtins.readFile ../dotfiles/brave.json)}"
+  home.activation.configureBrave = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    SOURCE_PREFS="${pkgs.writeText "brave-golden-prefs.json" (builtins.readFile ../dotfiles/brave.json)}"
 
-  #   BRAVE_DIR="$HOME/Library/Application Support/BraveSoftware/Brave-Browser"
+    BRAVE_DIR="$HOME/Library/Application Support/BraveSoftware/Brave-Browser"
 
-  #   for PROFILE_DIR in "$BRAVE_DIR"/Default "$BRAVE_DIR"/Profile*; do
-  #     TARGET_PREFS="$PROFILE_DIR/Preferences"
+    for PROFILE_DIR in "$BRAVE_DIR"/Default "$BRAVE_DIR"/Profile*; do
+      TARGET_PREFS="$PROFILE_DIR/Preferences"
 
-  #     if [ -f "$TARGET_PREFS" ]; then
-  #       echo "Config into: $PROFILE_DIR"
-  #       ${pkgs.jq}/bin/jq --slurpfile src "$SOURCE_PREFS" '. * $src[0]' "$TARGET_PREFS" > "$TARGET_PREFS.tmp" && mv "$TARGET_PREFS.tmp" "$TARGET_PREFS"
-  #     fi
-  #   done
-  # '';
+      if [ -f "$TARGET_PREFS" ]; then
+        echo "Config into: $PROFILE_DIR"
+        ${pkgs.jq}/bin/jq --slurpfile src "$SOURCE_PREFS" '. * $src[0]' "$TARGET_PREFS" > "$TARGET_PREFS.tmp" && mv "$TARGET_PREFS.tmp" "$TARGET_PREFS"
+      fi
+    done
+  '';
 }
