@@ -78,6 +78,7 @@ in {
     # bitwarden-cli
     gnupg
     jujutsu
+    claude-code
   ];
 
   programs.git = {

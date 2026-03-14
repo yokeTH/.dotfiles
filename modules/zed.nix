@@ -135,6 +135,7 @@
         };
         biome = {
           settings = {
+            config_path = "./biome.json";
             require_config_file = true;
           };
         };

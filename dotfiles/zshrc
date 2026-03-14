@@ -7,3 +7,5 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export GPG_TTY=$TTY
 source /Users/yoketh/.config/op/plugins.sh
+
+export PATH="$HOME/.local/bin:$PATH"
