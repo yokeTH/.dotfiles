@@ -58,6 +58,8 @@ in {
     ripgrep
     eza
 
+    tmux
+
     zulu
     # ngrok
 

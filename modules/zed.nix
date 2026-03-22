@@ -70,7 +70,7 @@
         verilog = true;
         vue = true;
         xml = true;
-        biome = true;
+        # biome = true;
         lua = true;
         scss = true;
         zig = true;
