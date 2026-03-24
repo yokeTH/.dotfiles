@@ -64,7 +64,7 @@
           # {app = "/System/Cryptexes/App/System/Applications/Safari.app";}
           {app = "${pkgs.brave}/Applications/Brave Browser.app";}
           {app = "/System/Applications/Mail.app";}
-          {app = "${pkgs.zed-editor}/Applications/Zed.app";}
+          {app = "/Applications/Zed.app";}
           {app = "/Applications/Ghostty.app";}
           {app = "/Applications/Discord.app";}
           {spacer = {small = true;};}

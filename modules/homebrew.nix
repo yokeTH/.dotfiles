@@ -3,6 +3,7 @@
     enable = true;
     enableRosetta = true;
     user = "${user}";
+    autoMigrate = true;
   };
 
   homebrew = {
@@ -51,6 +52,8 @@
       "shottr"
       "imageoptim"
       "tablepro"
+      "zed"
+      "obsidian"
     ];
 
     masApps = {

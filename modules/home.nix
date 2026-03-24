@@ -75,7 +75,7 @@ in {
     ffmpeg
     # _1password-cli
     deploys-app
-    zed-discord-presence
+
     cloudflared
     # bitwarden-cli
     gnupg
