@@ -8,6 +8,7 @@
 }: let
   gcloud = pkgs.google-cloud-sdk.withExtraComponents [pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin];
   deploys-app = pkgs.callPackage ../pkgs/cli/deploys-app/package.nix {};
+  portless = pkgs.callPackage ../pkgs/cli/portless/package.nix {};
 
   braveExtensions = [
     "cjpalhdlnbpafiamejdnhcphjbkeiagm" # uBlock Origin
@@ -75,6 +76,7 @@ in {
     ffmpeg
     # _1password-cli
     deploys-app
+    portless
 
     cloudflared
     # bitwarden-cli
