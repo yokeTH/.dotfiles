@@ -30,7 +30,7 @@
       "scss"
       "zig"
       "lua"
-      "discord-presence"
+      "oxc"
     ];
     extraPackages = [pkgs.nixd];
     userSettings = {
@@ -108,6 +108,25 @@
         };
       };
       lsp = {
+        oxlint = {
+          initialization_options = {
+            settings = {
+              configPath = null;
+              run = "onType";
+              disableNestedConfig = false;
+              fixKind = "safe_fix";
+              unusedDisableDirectives = "deny";
+            };
+          };
+        };
+        oxfmt = {
+          initialization_options = {
+            settings = {
+              "fmt.configPath" = null;
+              run = "onSave";
+            };
+          };
+        };
         rust-analyzer = {
           initialization_options = {
             inlayHints = {
@@ -135,7 +154,6 @@
         };
         biome = {
           settings = {
-            config_path = "./biome.json";
             require_config_file = true;
           };
         };
