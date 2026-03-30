@@ -88,6 +88,64 @@
         enabled = true;
       };
       languages = {
+        CSS = {
+          format_on_save = "on";
+          prettier.allowed = false;
+          formatter = [{language_server.name = "oxfmt";}];
+        };
+        GraphQL = {
+          format_on_save = "on";
+          prettier.allowed = false;
+          formatter = [{language_server.name = "oxfmt";}];
+        };
+        Handlebars = {
+          format_on_save = "on";
+          prettier.allowed = false;
+          formatter = [{language_server.name = "oxfmt";}];
+        };
+        HTML = {
+          format_on_save = "on";
+          prettier.allowed = false;
+          formatter = [{language_server.name = "oxfmt";}];
+        };
+        JavaScript = {
+          format_on_save = "on";
+          prettier.allowed = false;
+          formatter = [
+            {language_server.name = "oxfmt";}
+            {code_action = "source.fixAll.oxc";}
+          ];
+        };
+        JSON = {
+          format_on_save = "on";
+          prettier.allowed = false;
+          formatter = [{language_server.name = "oxfmt";}];
+        };
+        JSON5 = {
+          format_on_save = "on";
+          prettier.allowed = false;
+          formatter = [{language_server.name = "oxfmt";}];
+        };
+        JSONC = {
+          format_on_save = "on";
+          prettier.allowed = false;
+          formatter = [{language_server.name = "oxfmt";}];
+        };
+        Less = {
+          format_on_save = "on";
+          prettier.allowed = false;
+          formatter = [{language_server.name = "oxfmt";}];
+        };
+        Markdown = {
+          format_on_save = "on";
+          prettier.allowed = false;
+          formatter = [{language_server.name = "oxfmt";}];
+        };
+        MDX = {
+          format_on_save = "on";
+          prettier.allowed = false;
+          formatter = [{language_server.name = "oxfmt";}];
+        };
         Nix = {
           formatter = {
             external = {
@@ -105,6 +163,31 @@
         };
         TOML = {
           language_servers = ["!air.toml"];
+        };
+        TSX = {
+          format_on_save = "on";
+          prettier.allowed = false;
+          formatter = [{language_server.name = "oxfmt";}];
+        };
+        TypeScript = {
+          format_on_save = "on";
+          prettier.allowed = false;
+          formatter = [{language_server.name = "oxfmt";}];
+        };
+        "Vue.js" = {
+          format_on_save = "on";
+          prettier.allowed = false;
+          formatter = [{language_server.name = "oxfmt";}];
+        };
+        SCSS = {
+          format_on_save = "on";
+          prettier.allowed = false;
+          formatter = [{language_server.name = "oxfmt";}];
+        };
+        YAML = {
+          format_on_save = "on";
+          prettier.allowed = false;
+          formatter = [{language_server.name = "oxfmt";}];
         };
       };
       lsp = {
