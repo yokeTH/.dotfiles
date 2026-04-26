@@ -62,7 +62,7 @@
         show-recents = false;
         persistent-apps = [
           # {app = "/System/Cryptexes/App/System/Applications/Safari.app";}
-          {app = "${pkgs.brave}/Applications/Brave Browser.app";}
+          {app = "/Applications/Brave Browser.app";}
           {app = "/System/Applications/Mail.app";}
           {app = "/Applications/Zed.app";}
           {app = "/Applications/Ghostty.app";}

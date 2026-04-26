@@ -261,17 +261,6 @@ in {
     pinentry.package = pkgs.pinentry_mac;
   };
 
-  programs.chromium = {
-    enable = true;
-    package = pkgs.brave;
-
-    extensions = map (id: {id = id;}) braveExtensions;
-
-    commandLineArgs = [
-      "--disable-auto-update"
-    ];
-  };
-
   home.activation.configureBrave = lib.hm.dag.entryAfter ["writeBoundary"] ''
     SOURCE_PREFS="${pkgs.writeText "brave-golden-prefs.json" (builtins.readFile ../dotfiles/brave.json)}"
 

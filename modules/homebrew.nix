@@ -52,6 +52,7 @@
       "imageoptim"
       "zed"
       "obsidian"
+      "brave-browser"
     ];
 
     masApps = {
