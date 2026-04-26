@@ -27,7 +27,6 @@
       "orbstack"
       "ghostty"
       "notion"
-      "intellij-idea-ce"
       "slack"
       "zoom"
       "raycast"
@@ -51,7 +50,6 @@
       "obs"
       "shottr"
       "imageoptim"
-      "tablepro"
       "zed"
       "obsidian"
     ];
