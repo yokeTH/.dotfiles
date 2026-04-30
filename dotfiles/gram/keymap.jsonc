@@ -1,0 +1,15 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-alt-shift-up": "editor::AddSelectionAbove",
+      "cmd-alt-shift-down": "editor::AddSelectionBelow"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-w t": "terminal_panel::ToggleFocus"
+    }
+  }
+]

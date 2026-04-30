@@ -1,4 +1,5 @@
-{user, ...}: {
+{ user, ... }:
+{
   nix-homebrew = {
     enable = true;
     enableRosetta = true;
@@ -51,6 +52,7 @@
       "shottr"
       "imageoptim"
       "zed"
+      "gram"
       "obsidian"
       "brave-browser"
     ];

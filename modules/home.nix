@@ -34,6 +34,7 @@ in {
     ]
     ++ lib.optionals isDarwin [
       ./zed.nix
+      ./gram.nix
       ./ghostty.nix
     ];
 
