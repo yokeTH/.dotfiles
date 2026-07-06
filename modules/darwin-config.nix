@@ -198,6 +198,9 @@
 
   nixpkgs.hostPlatform = "aarch64-darwin";
 
+  documentation.enable = false;
+  system.tools.darwin-uninstaller.enable = false;
+
   nix.settings = {
     experimental-features = "nix-command flakes";
     trusted-users = ["root" "${user}"];

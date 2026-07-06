@@ -12,7 +12,7 @@
 
   braveExtensions = [
     "cjpalhdlnbpafiamejdnhcphjbkeiagm" # uBlock Origin
-    "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
+    "aeblfdkhhhdcdjpifhhbdiojplfjncoa" # 1Password
     "hlepfoohegkhhmjieoechaddaejaokhf" # Refined GitHub
     "lnjaiaapbakfhlbjenjkhffcdpoompki" # Catppuccin for Web File Explorer Icons
     "eifflpmocdbdmepbjaopkkhbfmdgijcc" # JSON Viewer Pro
@@ -245,7 +245,7 @@ in {
     LANG = "en_US.UTF-8";
     LC_CTYPE = "en_US.UTF-8";
     LC_ALL = "en_US.UTF-8";
-    SSH_AUTH_SOCK = "$HOME/.bitwarden-ssh-agent.sock";
+    SSH_AUTH_SOCK = "$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock";
   };
 
   xdg.enable = true;
