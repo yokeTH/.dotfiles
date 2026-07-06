@@ -181,12 +181,6 @@ in {
         gp = "git push";
         gs = "git status";
         gt = "git tag";
-
-        jd = "jj desc";
-        jf = "jj git fetch";
-        jn = "jj new";
-        jp = "jj git push";
-        js = "jj st";
       }
       // (
         if (!isDarwin)
@@ -213,6 +207,7 @@ in {
       };
 
       ui.show-cryptographic-signatures = true;
+      ui.default-command = "log";
 
       signing = {
         backend = "ssh";
@@ -221,6 +216,32 @@ in {
         backends.ssh = {
           allowed-signers = "${config.xdg.configHome}/jj/allowed_signers";
         };
+      };
+
+      aliases = {
+        b = ["branch"];
+        d = ["desc"];
+        f = ["git" "fetch"];
+        n = ["new"];
+        p = ["git" "push"];
+        s = ["st"];
+
+        # Move the closest bookmark to the current commit. This is useful when
+        # working on a named branch, creating a bunch of commits, and then
+        # needing to update the bookmark before pushing.
+        tug = ["bookmark" "move" "--from" "closest_bookmark(@-)" "--to" "@-"];
+
+        # Rebase the current branch onto the trunk.
+        retrunk = ["rebase" "-d" "trunk()"];
+      };
+
+      revset-aliases = {
+        "closest_bookmark(to)" = "heads(::to & bookmarks())";
+        "fork_history(to, from)" = "fork_point(to | from)..@";
+      };
+
+      template-aliases = {
+        "format_timestamp(timestamp)" = "timestamp.ago()";
       };
     };
   };
