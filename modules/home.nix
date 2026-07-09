@@ -10,6 +10,16 @@
   deploys-app = pkgs.callPackage ../pkgs/cli/deploys-app/package.nix {};
   portless = pkgs.callPackage ../pkgs/cli/portless/package.nix {};
 
+  githubGitignore = filename: let
+    gitignore = pkgs.fetchFromGitHub {
+      owner = "github";
+      repo = "gitignore";
+      rev = "4488915eec0b3a45b5c63ead28f286819c0917de";
+      hash = "sha256-t/+ZQiGEziCqs8kIdlb/3/KBs0XQnHyQC+xoV2rzfbQ=";
+    };
+  in
+    lib.splitString "\n" (builtins.readFile "${gitignore}/${filename}");
+
   braveExtensions = [
     "cjpalhdlnbpafiamejdnhcphjbkeiagm" # uBlock Origin
     "aeblfdkhhhdcdjpifhhbdiojplfjncoa" # 1Password
@@ -87,6 +97,13 @@ in {
 
   programs.git = {
     enable = true;
+    ignores =
+      githubGitignore "Global/macOS.gitignore"
+      ++ githubGitignore "Global/Linux.gitignore"
+      ++ githubGitignore "Global/Vim.gitignore"
+      ++ githubGitignore "Global/VisualStudioCode.gitignore"
+      ++ githubGitignore "Global/GPG.gitignore"
+      ++ [".direnv" ".envrc" ".zed"];
     settings =
       {
         user = {
