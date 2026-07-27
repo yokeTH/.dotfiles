@@ -51,6 +51,9 @@
       "zed"
       "obsidian"
       "brave-browser"
+      "macs-fan-control"
+      "tableplus"
+      "telegram"
     ];
 
     masApps = {
